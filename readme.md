@@ -205,5 +205,20 @@ CONFIGURE Player scene > Collision > Layer 1 (toggle off)
 CONFIGURE BasicEnemy scene > Collision > Layer 1 (toggle off)
 
 
-video 2 - TBA
+video 2 - Sword spawner
+
+CREATE SwordAbility scene (Node2D > Sprite2D with Texture > CollisionShape2D with Circle)
+CONFIGURE SwordAbility scene > Offset > y = -4 // pivot point on handle, for better sprite rotation
+
+CREATE SwordAbilityController scene > sword_ability_controller.gd
+. > """ @export var sword_ability: PackedScene """ > (drag & drop) sword_ability.tscn into this export (Inspector panel)
+. > ADD Timer node > Autostart (on) > One Shot (off) > Wait Time (1.5 s) // connect to timer SIGNAL
+
+CREATE Node AbilityManager inside Player scene
+. > ADD SwordAbilityController scene below it (in node tree)
+
+
+video 3 - TBA
+
+
 ```
