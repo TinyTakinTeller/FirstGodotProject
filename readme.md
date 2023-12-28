@@ -218,7 +218,46 @@ CREATE Node AbilityManager inside Player scene
 . > ADD SwordAbilityController scene below it (in node tree)
 
 
-video 3 - TBA
+video 3 - AnimationPlayer
+
+ADD AnimationPlayer node to SwordAbility scene > Animation (Animation panel) > create new animation "swing"
+. > (top right, animation panel) set animation length to 0.3 (clock icon) // zoom using scrollbar (bottom right, animation panel)
+. > CLICK (key icon) in Sprite2D property *Rotation* (Inspector panel) to create new animation key frames track
+	.. > Interpolation = cubic (far right of key frames track)
+	.. > at 0.2 seconds, create new animation key frame (right click animation track > Insert Key) // hold shift for snapping
+		... > value = 180 (Inspector panel, select the new key frame)
+. > CLICK (key icon) in Sprite2D property *Scale* (Inspector panel) to create new animation key frames track
+	.. > Interpolation = cubic (far right of key frames track)
+	.. > at 0.15 seconds, create new animation key frame
+		... > value = 2
+	.. > at 0.25 seconds, create new animation key frame
+		... > value = 1
+EXTEND ANIMATION LENGTH to 0.5
+CHANGE Snap to 0.05 (bottom right) > select and move all key frames forward to the end (0.5)
+. SELECT Scale frames track
+	.. > at 0.0 seconds, create new animation key frame ... > value = 0
+	.. > at 0.1 seconds, create new animation key frame ... > value = 1.25
+EXTEND ANIMATION LENGTH to 0.7
+. SELECT Rotation frames track
+	.. > at 0.7 seconds, create new animation key frame ... > value = 0
+	.. > edit at 0.4, set Easing curve to 1.68
+	.. > at 0.0 seconds, create new animation key frame ... > value = 0
+	.. > edit at 0.2 ... value = -10
+. SELECT Scale frames track
+	.. > at 0.7 seconds, create new animation key frame ... > value = 0
+	.. > edit second to last key frame, set Easing curve to 5.65
+// etc play with random values and frames
+
+CLICK "Autoplay on Load" (toggle on) next to "Edit" on Animation panel
+
+CLICK "+ Add Track" on Animation panel > Call Method Track > SwordAbility root node
+. > RIGHT CLICK > Insert Key > "queue_free" at 0.7 seconds // can be called from code, or here for "self-cleaning"
+
+// TIP: Scene panel has Remote/Local views (switch to see SwordAbility spawning and despawning properly)
+
+
+video 4 - TBA
+
 
 
 ```
