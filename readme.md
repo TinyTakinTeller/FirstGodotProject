@@ -10,7 +10,7 @@ LEARN GODOT 2024 (Godot Stable 4.2.1)
 
 LINK TO VIDEO MATERIAL: https://www.udemy.com/course/create-a-complete-2d-arena-survival-roguelike-game-in-godot-4/
 
-TEXT MATERIAL OF 1 OUT OF 6 CHAPTERS IS BELOW. (With minor bonus personal modifications included.) 
+TEXT MATERIAL:
 
 
 Chapter 1. Starting Out
@@ -189,3 +189,21 @@ VISIT https://github.com/godotengine/godot-git-plugin/wiki
 UPLOAD THIS PROJECT AND THESE NOTES TO GITHUB.
 ```
 
+
+Personal Notes for **Chapter 2** of the course are below.
+
+
+```
+Chapter 2. Building the Foundation
+
+
+video 1 - Rat enemy
+
+CREATE BasicEnemy scene (CharacterBody2D > Sprite2D with Texture > CollisionShape2D with Circle) > basic_enemy.gd
+ADD BasicEnemy scene to Main scene
+CONFIGURE Player scene > Collision > Layer 1 (toggle off)
+CONFIGURE BasicEnemy scene > Collision > Layer 1 (toggle off)
+
+
+video 2 - TBA
+```
