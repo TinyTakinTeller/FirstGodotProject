@@ -2,8 +2,26 @@
 
 Following Udemy course: **Create a Complete 2D Survivors Style Game in Godot 4**
 
-Personal Notes for **Chapter 1** of the course are below.
+TLDR configuration settings from all chapters are below.
+<details>
 
+```
+TLDR CONFIGURATION:
+- compatibility renderer
+- 2d profile with unchecked 3D editor
+- panels on left side; top:[FileSystem,History][Scene,Import], bot:[][Inspector,Node]
+- disable folding (on)
+- default texture filter: nearest
+- input map: arrow keys and w,a,s,d
+- viewport: 640 x 360, stretch mode: viewport, window override: 1920 x 1080
+- name 2D physic layers 1,2,3 (for Mask/Layer), e.g. Terrain, Player, Enemy
+- (toggle on) Snap 2D Transforms to Pixels
+```
+
+</details>
+
+Personal Notes for **Chapter 1** of the course are below.
+<details>
 
 ```
 LEARN GODOT 2024 (Godot Stable 4.2.1)
@@ -14,16 +32,6 @@ TEXT MATERIAL:
 
 
 Chapter 1. Starting Out
-
-
-TLDR CONFIGURATION:
-- compatibility renderer
-- 2d profile with unchecked 3D editor
-- panels on left side; top:[FileSystem,History][Scene,Import], bot:[][Inspector,Node]
-- disable folding (on)
-- default texture filter: nearest
-- input map: arrow keys and w,a,s,d
-- viewport: 640 x 360, stretch mode: viewport, window override: 1920 x 1080
 
 
 
@@ -189,15 +197,13 @@ VISIT https://github.com/godotengine/godot-git-plugin/wiki
 UPLOAD THIS PROJECT AND THESE NOTES TO GITHUB.
 ```
 
+</details>
 
 Personal Notes for **Chapter 2** of the course are below.
-
+<details>
 
 ```
 Chapter 2. Building the Foundation
-
-TLDR CONFIGURATION:
-- name 2D physic layers 1,2,3 (for Mask/Layer), e.g. Terrain, Player, Enemy
 
 
 video 1 - Rat enemy
@@ -297,10 +303,17 @@ TIP: Debug > Visible Collision Shapes (toggle on)
 RENAME Area2D's to Hitbox
 
 
-video 6 - TBA
+video 6 - Configure integral coordinates for 2D nodes to be less jittery
+
+CLICK Project > Project Settings... > Rendering > 2D > Snap 2D Transforms to Pixels // TIP: toggle advanced settings on
+
+
+video 7 - TBA
 
 
 
 
 
 ```
+
+</details>
