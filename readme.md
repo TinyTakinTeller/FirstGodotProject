@@ -256,7 +256,17 @@ CLICK "+ Add Track" on Animation panel > Call Method Track > SwordAbility root n
 // TIP: Scene panel has Remote/Local views (switch to see SwordAbility spawning and despawning properly)
 
 
-video 4 - TBA
+video 4 - Targeting Enemies
+
+ADD BasicEnemy to "enemy" GROUP
+EDIT sword_ability_controller.gd 
+. > filter enemies by max distance
+. > select closest enemy
+TIP: squaring is faster than square root
+TIP: prefix _ means variable is unused
+
+
+video 5 - TBA
 
 
 
