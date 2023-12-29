@@ -20,3 +20,4 @@ func get_direction() -> Vector2:
 	var y_movement: float = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 
 	return Vector2(x_movement, y_movement).normalized()
+

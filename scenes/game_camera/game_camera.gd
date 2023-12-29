@@ -18,3 +18,4 @@ func acquire_target() -> void:
 	var player: Node2D = self.get_tree().get_first_node_in_group("player") as Node2D
 	if player != null:
 		self.target_position = player.global_position
+

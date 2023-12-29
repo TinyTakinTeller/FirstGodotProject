@@ -18,12 +18,16 @@ func on_timer_timeout() -> void:
 	if target == null:
 		return
 
-	spawn_sword_instance(target)
+	spawn_sword_instance(target, 4)
 
-
-func spawn_sword_instance(target: Node2D) -> void:
-	var sword_instance : Node2D = self.sword_ability.instantiate() as Node2D
+## sword instance is spawned at random point that is 'distance' away from 'target'
+## sword instance is pointing towards 'target'
+## TODO: maybe spawn sword only in front of the enemy that is moving towards player?
+func spawn_sword_instance(target: Node2D, distance: float) -> void:
+	var sword_instance: Node2D = self.sword_ability.instantiate() as Node2D
 	sword_instance.global_position = target.global_position
+	sword_instance.global_position += distance * Vector2.RIGHT.rotated(randf_range(0, TAU))
+	sword_instance.rotation = (target.global_position - sword_instance.global_position).angle()
 	target.get_parent().add_child(sword_instance)
 
 
@@ -44,3 +48,4 @@ func get_closest_enemy_in_ability_range(target: Node2D) -> Node2D:
 		return distance_a < distance_b
 	)
 	return enemies[0] as Node2D
+

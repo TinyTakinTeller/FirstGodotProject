@@ -5,7 +5,7 @@ const MAX_SPEED: float = 75
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Hitbox.area_entered.connect(on_entered)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,3 +19,8 @@ func get_direction_to_player() -> Vector2:
 	if player != null:
 		return (player.global_position - self.global_position).normalized()
 	return Vector2.ZERO
+
+
+func on_entered(hitbox: Area2D) -> void:
+	self.queue_free()
+

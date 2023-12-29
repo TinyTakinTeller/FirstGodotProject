@@ -196,6 +196,9 @@ Personal Notes for **Chapter 2** of the course are below.
 ```
 Chapter 2. Building the Foundation
 
+TLDR CONFIGURATION:
+- name 2D physic layers 1,2,3 (for Mask/Layer), e.g. Terrain, Player, Enemy
+
 
 video 1 - Rat enemy
 
@@ -266,7 +269,37 @@ TIP: squaring is faster than square root
 TIP: prefix _ means variable is unused
 
 
-video 5 - TBA
+video 5 - Killing Enemies
+
+ADD to BasicEnemy > Area2D with child CollisionShape2D with circle // radius 12
+Area2D > toggle Mask 3 (on) else (off)
+
+CONFIGURE Project > Project Settings... > Layer Names > 2D Physics > L1 "Terrain" L2 "Player" L3 "Enemy"
+
+TIP: move Area2D above other children (rendered first)
+TIP: Mask "I want to check if I am colliding with you" && Layer "I am on this layer so you can collide with me"
+
+ADD to SwordAbility > Area2D with child CollisionShape2D with rectangle // x 30 y 30, align left side to sword center (right side is our attack direction)
+Area2D > toggle Layer 3 (on) else (off)
+
+EDIT AnimationPlayer > add CollisionsShape2D Disabled property key frames track // disable at 0, enable at 0.15, disable at 0.4
+
+EDIT basic_enemy.gd
+. > BasicEnemy.Area2D > Node panel (Signals) > area_entered(area: Area2D)
+
+EDIT sword_ability_controller.gd
+. > point in direction, i.e. spawned sword towards target enemy
+// TIP: subtract global_position POINT_AT - POINT_FROM then set rotation to result angle
+// TIP: add random offset in a radius to sword spawning coords
+
+TIP: Debug > Visible Collision Shapes (toggle on)
+
+RENAME Area2D's to Hitbox
+
+
+video 6 - TBA
+
+
 
 
 
