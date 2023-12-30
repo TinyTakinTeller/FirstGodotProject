@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const MAX_SPEED: float = 75
+const MAX_SPEED: float = 40
 
 
 # Called when the node enters the scene tree for the first time.

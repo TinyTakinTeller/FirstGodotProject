@@ -1,5 +1,7 @@
 extends Camera2D
 
+const SMOOTHING_FACTOR: float = 20
+
 var target_position: Vector2 = Vector2.ZERO 
 
 
@@ -11,7 +13,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	self.acquire_target()
-	self.global_position = self.global_position.lerp(self.target_position, 1.0 - exp(-delta * 10))
+	self.global_position = self.global_position.lerp(self.target_position, 1.0 - exp(-delta * SMOOTHING_FACTOR))
 
 
 func acquire_target() -> void:

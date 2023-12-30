@@ -15,7 +15,7 @@ TLDR CONFIGURATION:
 - input map: arrow keys and w,a,s,d
 - viewport: 640 x 360, stretch mode: viewport, window override: 1920 x 1080
 - name 2D physic layers 1,2,3 (for Mask/Layer), e.g. Terrain, Player, Enemy
-- (toggle on) Snap 2D Transforms to Pixels
+- (-> toggle on -> EDIT: off // after introducing smoothing acceleration) Snap 2D Transforms to Pixels
 ```
 
 </details>
@@ -314,8 +314,20 @@ NEW SCENE EnemyManager (default Node) > enemy_manager.gd
 . > Timer // Wait Time 1 s // Autostart on
 
 
-video 8 - TBA
+video 8 - Improving the game feel
 
+// camera smoothing 10 -> 20
+// Player > ACCELERATION_SMOOTHING = 25, i.e. velocity = velocity.lerp(target_velocity, 1 - exp(-delta * ACCELERATION_SMOOTHING))
+// MAX_SPEED 200 -> 125
+// basic enemy MAX_SPEED 75 -> 40
+NAME Layer 4 "EnemyCollision" > BasicEnemy > toggle on Layer 4 and Mask 4
+EDIT Player (Inspector panel) > Motion Mode: Grounded (// TIP: for 2D platformers) -> Floating (// TIP: better for 2D topdown)
+UNDO CONFIGURATION Snap 2D Transforms to Pixels on -> off // newly added smoothing acceleration works better without it
+
+* BONUS: refactor spawner functions to utility class
+
+
+video 9 - TBA
 
 
 

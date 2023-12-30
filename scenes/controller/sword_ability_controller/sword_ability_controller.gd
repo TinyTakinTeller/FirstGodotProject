@@ -1,7 +1,8 @@
 extends Node
 
 @export var sword_ability: PackedScene
-@export var ability_range: int
+@export var ability_range: float
+@export var spawn_radius: float
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,20 +19,10 @@ func on_timer_timeout() -> void:
 	if target == null:
 		return
 
-	spawn_sword_instance(target, 4)
-
-## sword instance is spawned at random point that is 'distance' away from 'target'
-## sword instance is pointing towards 'target'
-## TODO: maybe spawn sword only in front of the enemy that is moving towards player?
-func spawn_sword_instance(target: Node2D, distance: float) -> void:
-	var sword_instance: Node2D = self.sword_ability.instantiate() as Node2D
-	sword_instance.global_position = target.global_position
-	sword_instance.global_position += distance * Vector2.RIGHT.rotated(randf_range(0, TAU))
-	sword_instance.rotation = (target.global_position - sword_instance.global_position).angle()
-	target.get_parent().add_child(sword_instance)
+	SpawnerUtility.spawn_rotated_instance(self.sword_ability, target, self.spawn_radius)
 
 
-func get_closest_enemy_in_radius(target: Node2D, radius: int) -> Node2D:
+func get_closest_enemy_in_radius(target: Node2D, radius: float) -> Node2D:
 	var enemies: Array[Node] = self.get_tree().get_nodes_in_group("enemy")
 	if enemies.size() == 0:
 		return null

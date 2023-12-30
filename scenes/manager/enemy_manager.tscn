@@ -6,7 +6,7 @@
 [node name="EnemyManager" type="Node"]
 script = ExtResource("1_w16j7")
 enemy_scene = ExtResource("2_pn3wo")
-spawn_radius = 375
+spawn_radius = 375.0
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
