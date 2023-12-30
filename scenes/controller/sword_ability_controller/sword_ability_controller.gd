@@ -14,7 +14,7 @@ func on_timer_timeout() -> void:
 	if player == null:
 		return
 
-	var target: Node2D = get_closest_enemy_in_ability_range(player)
+	var target: Node2D = get_closest_enemy_in_radius(player, self.ability_range)
 	if target == null:
 		return
 
@@ -31,13 +31,13 @@ func spawn_sword_instance(target: Node2D, distance: float) -> void:
 	target.get_parent().add_child(sword_instance)
 
 
-func get_closest_enemy_in_ability_range(target: Node2D) -> Node2D:
+func get_closest_enemy_in_radius(target: Node2D, radius: int) -> Node2D:
 	var enemies: Array[Node] = self.get_tree().get_nodes_in_group("enemy")
 	if enemies.size() == 0:
 		return null
 	
 	enemies = enemies.filter(func(enemy: Node2D):
-		return enemy.global_position.distance_squared_to(target.global_position) < pow(ability_range, 2)
+		return enemy.global_position.distance_squared_to(target.global_position) < pow(radius, 2)
 	)
 	if enemies.size() == 0:
 		return null;

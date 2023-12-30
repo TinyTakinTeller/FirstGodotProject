@@ -1,6 +1,6 @@
 ## Personal Project To Learn Basics of Godot 4
 
-Following Udemy course: **Create a Complete 2D Survivors Style Game in Godot 4**
+Following Udemy course **Create a Complete 2D Survivors Style Game in Godot 4** (with personal tweaks).
 
 TLDR configuration settings from all chapters are below.
 <details>
@@ -308,8 +308,13 @@ video 6 - Configure integral coordinates for 2D nodes to be less jittery
 CLICK Project > Project Settings... > Rendering > 2D > Snap 2D Transforms to Pixels // TIP: toggle advanced settings on
 
 
-video 7 - TBA
+video 7 - Spawning Enemies Automatically
 
+NEW SCENE EnemyManager (default Node) > enemy_manager.gd
+. > Timer // Wait Time 1 s // Autostart on
+
+
+video 8 - TBA
 
 
 
