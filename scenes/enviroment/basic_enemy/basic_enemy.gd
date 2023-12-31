@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const MAX_SPEED: float = 40
 
-@export var experience_vial: PackedScene
+@onready var health_component: HealthComponent = $HealthComponent
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,6 +24,7 @@ func get_direction_to_player() -> Vector2:
 
 
 func on_entered(_hitbox: Area2D) -> void:
-	SpawnerUtility.spawn_instance(experience_vial, self, 1)
-	self.queue_free()
+	var color_factor: float = self.health_component.health_percent() - 1 / self.health_component.max_health
+	$Sprite2D.modulate = Color(1, color_factor, color_factor)
+	self.health_component.damage(1)
 

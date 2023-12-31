@@ -10,6 +10,9 @@ func _ready():
 
 
 func on_timer_timeout() -> void:
+	if self.enemy_scene == null:
+		return
+	
 	var player: Node2D = self.get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
 		return

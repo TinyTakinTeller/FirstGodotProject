@@ -11,10 +11,13 @@ func _ready():
 
 
 func on_timer_timeout() -> void:
+	if self.sword_ability == null:
+		return
+	
 	var player: Node2D = self.get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
 		return
-
+	
 	var target: Node2D = get_closest_enemy_in_radius(player, self.ability_range)
 	if target == null:
 		return

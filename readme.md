@@ -272,7 +272,7 @@ EDIT sword_ability_controller.gd
 . > filter enemies by max distance
 . > select closest enemy
 TIP: squaring is faster than square root
-TIP: prefix _ means variable is unused
+TIP: prefix _ means variable is unused or function is private
 
 
 video 5 - Killing Enemies
@@ -352,7 +352,20 @@ CREATE global singleton GameEvents (autoload)
 BONUS spawn ExperienceVial on BasicEnemy queue_free()
 
 
-video 12 - TBA
+video 12 - Creating a health component
+
+TIP: Ctrl + D = rename
+TIP: use class_name to export (casta-ble) type
+TIP: use if-null-return to make mandatory @export null-safe ## this is fallback for not-yet-merged: https://github.com/godotengine/godot/pull/68420
+
+ADD HealthComponent (Node) > health_component.gd // emit signal died
+ADD VialDropComponent (Node) > vial_drop_component.gd // on signal died
+ADD *above components to BasicEnemy
+>> use .call_deferred() to avoid checking collisions on the same frame as free-ing the object (calls function on next idle frame)
+BONUS modulate color to indicate damage
+
+
+video 13 - TBA
 
 
 
