@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 const MAX_SPEED: float = 40
 
+@export var experience_vial: PackedScene
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,5 +24,6 @@ func get_direction_to_player() -> Vector2:
 
 
 func on_entered(_hitbox: Area2D) -> void:
+	SpawnerUtility.spawn_instance(experience_vial, self, 1)
 	self.queue_free()
 

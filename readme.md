@@ -335,7 +335,24 @@ ADD ArenaTimeUI (CanvasLayer) > arena_time_ui.gd
 .. > Label [Layout > Container Sizing > Horizontal: Shrink Center, Vertical: Shrink Begin, Text: "Time"]
 
 
-video 10 - TBA
+video 10 - Experience drops
+
+REFACTOR PACKAGES
+CONFIG Layer 5 "Pickup"
+ADD ExperienceVial (Node2D) . Sprite2D, Area2D.CollisionShape2D (16 circle) // Layer off Mask 5 on Hitbox (Area2D)
+. > experience_vial.gd
+ADD Hitbox (Area2D) . CollisionShape2D (32 circle) to Player // Layer 5 Mask off on Hitbox (Area2D)
+
+
+video 11 - Experience tracking
+
+ADD ExperienceManager (Node) > experience_manager.gd
+CREATE global singleton GameEvents (autoload) 
+. > emit custom experience signal > autoload configure the game_events.tscn > game_events.gd // add signal
+BONUS spawn ExperienceVial on BasicEnemy queue_free()
+
+
+video 12 - TBA
 
 
 
