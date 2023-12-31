@@ -327,7 +327,15 @@ UNDO CONFIGURATION Snap 2D Transforms to Pixels on -> off // newly added smoothi
 * BONUS: refactor spawner functions to utility class
 
 
-video 9 - TBA
+video 9 - Creating the game loop foundation (first UI element)
+
+ADD ArenaTimeManager (Node) . Timer > arena_time_manager.gd
+ADD ArenaTimeUI (CanvasLayer) > arena_time_ui.gd
+. > MarginContainer [Presets > Full Rect, Theme Overrides > Margin Top: 8, Mouse.Filter: Ignore // do not intercept mouse clicks]
+.. > Label [Layout > Container Sizing > Horizontal: Shrink Center, Vertical: Shrink Begin, Text: "Time"]
+
+
+video 10 - TBA
 
 
 

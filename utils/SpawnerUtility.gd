@@ -22,3 +22,4 @@ static func _add_instance(scene: PackedScene, target: Node2D, distance: float) -
 	var instance: Node2D = scene.instantiate() as Node2D
 	instance.global_position = spawn_position
 	return instance
+

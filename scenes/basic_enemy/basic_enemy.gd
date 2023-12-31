@@ -21,6 +21,6 @@ func get_direction_to_player() -> Vector2:
 	return Vector2.ZERO
 
 
-func on_entered(hitbox: Area2D) -> void:
+func on_entered(_hitbox: Area2D) -> void:
 	self.queue_free()
 
