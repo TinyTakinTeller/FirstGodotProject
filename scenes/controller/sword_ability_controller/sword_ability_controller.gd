@@ -41,7 +41,7 @@ func get_closest_enemy_in_radius(target: Node2D, radius: float) -> Node2D:
 		return enemy.global_position.distance_squared_to(target.global_position) < pow(radius, 2)
 	)
 	if enemies.size() == 0:
-		return null;
+		return null
 
 	enemies.sort_custom(func(a: Node2D, b: Node2D) -> bool:
 		var distance_a: float = a.global_position.distance_squared_to(target.global_position) 

@@ -386,7 +386,14 @@ experience_bar_ui.gd // @export experience_manager
 experience_manager.gd // var current_level, var target_experience // signal experience_updated(current, target)
 
 
-video 15 - TBA
+video 15 - Using Custom Resources for Upgrades
+
+ADD resources.upgrades.sword_rate.tres > ability_upgrade.gd extends Resource {id, name, description} // class_name
+. > add .gd into .tres "Script" property
+ADD UpgradeManager > upgrade_manager.gd // @export upgrade_pool: Array[AbilityUpgrade], @export experience_manager
+experience_manager.gd // signla level_up
+
+video 16 - TBA
 
 
 
