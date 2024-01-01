@@ -8,10 +8,10 @@ signal hurt(damage: float, health_percent_left: float)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.area_entered.connect(on_area_entered)
+	self.area_entered.connect(_on_area_entered)
 	
 	
-func on_area_entered(area: Area2D) -> void:
+func _on_area_entered(area: Area2D) -> void:
 	if self.health_component == null:
 		return
 	

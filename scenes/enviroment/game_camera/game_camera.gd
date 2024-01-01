@@ -12,12 +12,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	self.acquire_target()
+	self._acquire_target()
 	self.global_position = self.global_position.lerp(
 		self.target_position, 1.0 - exp(-delta * self.SMOOTHING_FACTOR))
 
 
-func acquire_target() -> void:
+func _acquire_target() -> void:
 	var player: Node2D = self.get_tree().get_first_node_in_group("player") as Node2D
 	if player != null:
 		self.target_position = player.global_position

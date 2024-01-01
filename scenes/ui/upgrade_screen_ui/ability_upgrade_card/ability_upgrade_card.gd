@@ -9,7 +9,7 @@ signal selected
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.gui_input.connect(on_gui_input)
+	self.gui_input.connect(_on_gui_input)
 
 
 func set_ability_upgrade(ability_upgrade: AbilityUpgrade) -> void:
@@ -17,7 +17,7 @@ func set_ability_upgrade(ability_upgrade: AbilityUpgrade) -> void:
 	self.description_label.text = ability_upgrade.description
 
 
-func on_gui_input(event: InputEvent) -> void:
+func _on_gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("left_click"):
 		self.selected.emit()
 

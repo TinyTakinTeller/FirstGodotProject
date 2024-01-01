@@ -6,10 +6,10 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Timer.timeout.connect(on_timer_timeout)
+	$Timer.timeout.connect(_on_timer_timeout)
 
 
-func on_timer_timeout() -> void:
+func _on_timer_timeout() -> void:
 	if self.enemy_scene == null:
 		return
 	
@@ -17,5 +17,10 @@ func on_timer_timeout() -> void:
 	if player == null:
 		return
 	
-	SpawnerUtility.spawn_instance(self.enemy_scene, player, self.spawn_radius)
+	self._spawn_enemy_instance(player)
+
+
+func _spawn_enemy_instance(target: Node2D) -> void:
+	var entities_layer: Node2D = self.get_tree().get_first_node_in_group("entities_layer")
+	SpawnerUtility.spawn_instance(self.enemy_scene, target, self.spawn_radius, entities_layer)
 

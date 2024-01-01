@@ -12,7 +12,7 @@ var current_level: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GameEvents.experience_vial_collected.connect(increment_experience)
+	GameEvents.experience_vial_collected.connect(_on_experience_vial_collected)
 
 
 func increment_experience(amount: float) -> void:
@@ -23,4 +23,8 @@ func increment_experience(amount: float) -> void:
 		self.current_level += 1
 		self.level_up.emit(self.current_level)
 	self.experience_updated.emit(self.current_experience, self.target_experience)
+
+
+func _on_experience_vial_collected(amount: float) -> void:
+	self.increment_experience(amount)
 

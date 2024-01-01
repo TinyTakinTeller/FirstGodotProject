@@ -4,7 +4,7 @@ const MIN_WAIT_TIME: float = 0.01
 
 @export var sword_ability: PackedScene
 @export var ability_range: float
-@export var spawn_radius: float
+@export var spawn_radius: float = 4
 
 @onready var timer: Timer = $Timer
 
@@ -14,11 +14,11 @@ var base_wait_time: float = 1.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.timer.timeout.connect(on_timer_timeout)
-	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
+	self.timer.timeout.connect(_on_timer_timeout)
+	GameEvents.ability_upgrade_added.connect(_on_ability_upgrade_added)
 
 
-func on_timer_timeout() -> void:
+func _on_timer_timeout() -> void:
 	if self.sword_ability == null:
 		return
 	
@@ -26,20 +26,22 @@ func on_timer_timeout() -> void:
 	if player == null:
 		return
 	
-	var target: Node2D = get_closest_enemy_in_radius(player, self.ability_range)
+	var target: Node2D = self._get_closest_enemy_in_radius(player, self.ability_range)
 	if target == null:
 		return
 	
-	spawn_sword_instance(target)
+	self._spawn_sword_instance(target)
 
 
-func spawn_sword_instance(target: Node2D) -> void:
-	var instance: SwordAbility = SpawnerUtility.spawn_instance(self.sword_ability, target, self.spawn_radius) as SwordAbility
+func _spawn_sword_instance(target: Node2D) -> void:
+	var foreground_layer: Node2D = self.get_tree().get_first_node_in_group("foreground_layer")
+	var instance: SwordAbility = SpawnerUtility.spawn_instance(
+		self.sword_ability, target, self.spawn_radius, foreground_layer) as SwordAbility
 	instance.rotation = (target.global_position - instance.global_position).angle()
 	instance.hitbox_component.damage = self.damage
 
 
-func get_closest_enemy_in_radius(target: Node2D, radius: float) -> Node2D:
+func _get_closest_enemy_in_radius(target: Node2D, radius: float) -> Node2D:
 	var enemies: Array[Node] = self.get_tree().get_nodes_in_group("enemy")
 	if enemies.size() == 0:
 		return null
@@ -58,7 +60,7 @@ func get_closest_enemy_in_radius(target: Node2D, radius: float) -> Node2D:
 	return enemies[0] as Node2D
 
 
-func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary) -> void:
+func _on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary) -> void:
 	if upgrade.id != "sword_rate":
 		pass
 	

@@ -11,13 +11,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var target_velocity: Vector2 = get_direction() * self.MAX_SPEED
+	var target_velocity: Vector2 = self._get_direction() * self.MAX_SPEED
 	self.velocity = self.velocity.lerp(
 		target_velocity, 1 - exp(-delta * self.ACCELERATION_SMOOTHING_FACTOR))
 	self.move_and_slide()
 
 
-func get_direction() -> Vector2:
+func _get_direction() -> Vector2:
 	# right is X+ axis and down is Y+ axis
 	var x_movement: float = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	var y_movement: float = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")

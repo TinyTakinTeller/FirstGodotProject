@@ -14,13 +14,13 @@ TLDR CONFIGURATION:
 - default texture filter: nearest
 - input map: arrow keys and w,a,s,d and left_click
 - viewport: 640 x 360, stretch mode: viewport, window override: 1920 x 1080
-- name 2D physic layers 1,2,3 (for Mask/Layer), e.g. Terrain, Player, Enemy
+- name 2D physic layers 1,2,3,4,5 (for Mask/Layer), e.g. Terrain, Player, Enemy, EnemyCollision, Pickup 
 - Snap 2D Transforms to Pixels: (chapter 1: on -> chapter 2: off)
 ```
 
 </details>
 
-Personal Notes for **Chapter 1** of the course are below.
+Personal Notes for **Chapter 1** of the course are below. - **The basic project: movable player character.**
 <details>
 
 ```
@@ -199,7 +199,7 @@ UPLOAD THIS PROJECT AND THESE NOTES TO GITHUB.
 
 </details>
 
-Personal Notes for **Chapter 2** of the course are below.
+Personal Notes for **Chapter 2** of the course are below. - **The basic game loop: player, enemies, upgrades.**
 <details>
 
 ```
@@ -414,7 +414,7 @@ video 17 - Enabling Upgrade Selection
 CONFIGURE Input Map > left_click > Mouse Buttons . Left Mouse Button
 ability_upgrade_card.gd // signal gui_input, signal selected
 upgrade_screen_ui.gd // bind selected signal
-TIP: DEBUG: use add_child() to add instance first and then use it after, to avoid 'Nil' exceptions
+TIP: DEBUG: use add_child() to add instance first (modify it after), to avoid 'Nil' exceptions
 
 
 video 18 - Making the Upgrade Functional
@@ -424,7 +424,32 @@ upgrade_manager.gd // emit ability_upgrade_added
 sword_ability_controller.gd // connect ability_upgrade_added
 
 
-video 19 - TBA
+video 19 - Improving the Scene Tree Structure (refactor Main node, private functions)
+
+REFACTOR Main node 
+. > Entities (Ordering . Y Sort Enabled: on) > "entities_layer" group
+. > Foreground > "foreground_layer" group
+BONUS: add "_" prefix to private methods
+
+
+video 20 - Adding Player Health
+
+TBA
+
+
+video 21 - Player Health Bar
+
+TBA
+
+
+video 22 - Creating the Victory Screen
+
+TBA
+
+
+video 23 - Creating the Defeat Screen
+
+TBA
 
 
 
@@ -441,4 +466,9 @@ Godot Engine QOL improvements wishlist is below.
 - Mandatory export flag: https://github.com/godotengine/godot/pull/68420 (TODO: refactor this project to use this feature.)
 ```
 
-<details/>
+</details>
+
+Conventions:
+- I prefer statically typed variables and functions
+- I use `self` keyword to force syntax highlight on member variables and when calling member functions
+

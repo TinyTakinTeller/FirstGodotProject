@@ -2,9 +2,9 @@ class_name SpawnerUtility
 
 
 ## 'scene' instance is spawned at random point that is 'distance' away from 'target'
-static func spawn_instance(scene: PackedScene, target: Node2D, distance: float) -> Node2D:
+static func spawn_instance(scene: PackedScene, target: Node2D, distance: float, parent: Node2D) -> Node2D:
 	var instance: Node2D = _get_instance(scene, target, distance)
-	target.get_parent().add_child(instance)
+	parent.add_child(instance)
 	return instance
 
 

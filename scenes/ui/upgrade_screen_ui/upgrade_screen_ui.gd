@@ -18,10 +18,10 @@ func set_ability_upgrades(ability_upgrades: Array[AbilityUpgrade]) -> void:
 		var card_instance: AbilityUpgradeCard = self.card_scene.instantiate() as AbilityUpgradeCard
 		self.card_container.add_child(card_instance)
 		card_instance.set_ability_upgrade(upgrade)
-		card_instance.selected.connect(on_selected.bind(upgrade))
+		card_instance.selected.connect(_on_selected.bind(upgrade))
 
 
-func on_selected(upgrade: AbilityUpgrade) -> void:
+func _on_selected(upgrade: AbilityUpgrade) -> void:
 	self.upgrade_selected.emit(upgrade)
 	self.get_tree().paused = false
 	self.queue_free()
