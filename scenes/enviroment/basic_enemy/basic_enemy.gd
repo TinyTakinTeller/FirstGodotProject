@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	self.velocity = get_direction_to_player() * MAX_SPEED
+	self.velocity = get_direction_to_player() * self.MAX_SPEED
 	self.move_and_slide()
 
 

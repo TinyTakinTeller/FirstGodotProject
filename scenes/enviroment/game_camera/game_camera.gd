@@ -13,7 +13,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	self.acquire_target()
-	self.global_position = self.global_position.lerp(self.target_position, 1.0 - exp(-delta * SMOOTHING_FACTOR))
+	self.global_position = self.global_position.lerp(
+		self.target_position, 1.0 - exp(-delta * self.SMOOTHING_FACTOR))
 
 
 func acquire_target() -> void:

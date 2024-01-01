@@ -12,10 +12,10 @@ TLDR CONFIGURATION:
 - panels on left side; top:[FileSystem,History][Scene,Import], bot:[][Inspector,Node]
 - disable folding (on)
 - default texture filter: nearest
-- input map: arrow keys and w,a,s,d
+- input map: arrow keys and w,a,s,d and left_click
 - viewport: 640 x 360, stretch mode: viewport, window override: 1920 x 1080
 - name 2D physic layers 1,2,3 (for Mask/Layer), e.g. Terrain, Player, Enemy
--  Snap 2D Transforms to Pixels: (chapter 1: on -> chapter 2: off)
+- Snap 2D Transforms to Pixels: (chapter 1: on -> chapter 2: off)
 ```
 
 </details>
@@ -393,10 +393,52 @@ ADD resources.upgrades.sword_rate.tres > ability_upgrade.gd extends Resource {id
 ADD UpgradeManager > upgrade_manager.gd // @export upgrade_pool: Array[AbilityUpgrade], @export experience_manager
 experience_manager.gd // signla level_up
 
-video 16 - TBA
+
+
+video 16 - Upgrade UI Groundwork
+
+ADD UpgradeScreenUI (CanvasLayer) > Process.Mode = Always
+	. MarginContainer (Preset > full rect) 
+		. HBoxContainer ("CardContainer") > Container Sizing: Horizontal (Shrink center), Vertical (Shrink center)
+			. PanelContainer ("AbilityUpgradeCard") > Custom Minimum Size (x 120 y 150) --> save branch as scene
+				. VBoxContainer
+					. Label ("NameLabel")
+					. Label ("DescriptionLabel") > Autowrap Mode: Word
+ability_upgrade_card.gd // func set_ability_upgrade(ability_upgrade: AbilityUpgrade)
+upgrade_screen_ui.gd // _ready(): game_tree().paused = true
+upgrade_manager.gd // @export var upgrade_screen_ui_scene: PackedScene
+
+
+video 17 - Enabling Upgrade Selection
+
+CONFIGURE Input Map > left_click > Mouse Buttons . Left Mouse Button
+ability_upgrade_card.gd // signal gui_input, signal selected
+upgrade_screen_ui.gd // bind selected signal
+TIP: DEBUG: use add_child() to add instance first and then use it after, to avoid 'Nil' exceptions
+
+
+video 18 - Making the Upgrade Functional
+
+game_events.gd // signal ability_upgrade_added
+upgrade_manager.gd // emit ability_upgrade_added
+sword_ability_controller.gd // connect ability_upgrade_added
+
+
+video 19 - TBA
 
 
 
 ```
 
 </details>
+
+Godot Engine QOL improvements wishlist is below.
+
+<details>
+
+```
+- Member variable hightlight: https://github.com/godotengine/godot/pull/74393 (TODO: refactor the project to not use 'self' on as a workaround for this.)
+- Mandatory export flag: https://github.com/godotengine/godot/pull/68420 (TODO: refactor this project to use this feature.)
+```
+
+<details/>

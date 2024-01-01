@@ -11,8 +11,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var target_velocity: Vector2 = get_direction() * MAX_SPEED
-	self.velocity = self.velocity.lerp(target_velocity, 1 - exp(-delta * ACCELERATION_SMOOTHING_FACTOR))
+	var target_velocity: Vector2 = get_direction() * self.MAX_SPEED
+	self.velocity = self.velocity.lerp(
+		target_velocity, 1 - exp(-delta * self.ACCELERATION_SMOOTHING_FACTOR))
 	self.move_and_slide()
 
 

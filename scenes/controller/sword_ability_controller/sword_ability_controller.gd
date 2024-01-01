@@ -1,14 +1,21 @@
 extends Node
 
+const MIN_WAIT_TIME: float = 0.01
+
 @export var sword_ability: PackedScene
 @export var ability_range: float
 @export var spawn_radius: float
+
+@onready var timer: Timer = $Timer
+
 var damage: float = 1
+var base_wait_time: float = 1.5
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Timer.timeout.connect(on_timer_timeout)
+	self.timer.timeout.connect(on_timer_timeout)
+	GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 
 
 func on_timer_timeout() -> void:
@@ -49,4 +56,12 @@ func get_closest_enemy_in_radius(target: Node2D, radius: float) -> Node2D:
 		return distance_a < distance_b
 	)
 	return enemies[0] as Node2D
+
+
+func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary) -> void:
+	if upgrade.id != "sword_rate":
+		pass
+	
+	var percent_reduction: float = current_upgrades["sword_rate"]["quantity"] * 0.1
+	self.timer.start(self.base_wait_time * max(1 - percent_reduction, self.MIN_WAIT_TIME))
 
