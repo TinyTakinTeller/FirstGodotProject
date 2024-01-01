@@ -375,7 +375,18 @@ hurtbox_component.gd // @export var health_component, BONUS: hurt signal
 sword_ability_controller.gd
 
 
-video 14 - TBA
+video 14 - Creating an Experience Bar UI
+
+ADD ExperienceBarUI (CanvasLayer) . MarginContainer (Preset > full rect | Mouse.Filter: ignore)
+. > ProgressBar (Container Sizing; Horizontal: Fill, Vertical: Shrink End | Mouse.Filter: ignore)
+.. Show Percentage: off
+.. Range: Min Value 0, Max Value 1, Step 0.01, value 0.5
+.. Layout . Custom Minimum Size . y = 8 px
+experience_bar_ui.gd // @export experience_manager
+experience_manager.gd // var current_level, var target_experience // signal experience_updated(current, target)
+
+
+video 15 - TBA
 
 
 
