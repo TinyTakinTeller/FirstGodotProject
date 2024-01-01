@@ -3,6 +3,7 @@ extends Node
 @export var sword_ability: PackedScene
 @export var ability_range: float
 @export var spawn_radius: float
+var damage: float = 1
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,8 +22,14 @@ func on_timer_timeout() -> void:
 	var target: Node2D = get_closest_enemy_in_radius(player, self.ability_range)
 	if target == null:
 		return
+	
+	spawn_sword_instance(target)
 
-	SpawnerUtility.spawn_rotated_instance(self.sword_ability, target, self.spawn_radius)
+
+func spawn_sword_instance(target: Node2D) -> void:
+	var instance: SwordAbility = SpawnerUtility.spawn_instance(self.sword_ability, target, self.spawn_radius) as SwordAbility
+	instance.rotation = (target.global_position - instance.global_position).angle()
+	instance.hitbox_component.damage = self.damage
 
 
 func get_closest_enemy_in_radius(target: Node2D, radius: float) -> Node2D:

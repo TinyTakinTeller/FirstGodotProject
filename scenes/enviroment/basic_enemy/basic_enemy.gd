@@ -2,12 +2,12 @@ extends CharacterBody2D
 
 const MAX_SPEED: float = 40
 
-@onready var health_component: HealthComponent = $HealthComponent
+@onready var sprite: Sprite2D = $Sprite2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Hitbox.area_entered.connect(on_entered)
+	$HurtboxComponent.hurt.connect(on_hurt)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,8 +23,6 @@ func get_direction_to_player() -> Vector2:
 	return Vector2.ZERO
 
 
-func on_entered(_hitbox: Area2D) -> void:
-	var color_factor: float = self.health_component.health_percent() - 1 / self.health_component.max_health
-	$Sprite2D.modulate = Color(1, color_factor, color_factor)
-	self.health_component.damage(1)
+func on_hurt(_damage: float, health_percent_left: float) -> void:
+	sprite.modulate = Color(1, health_percent_left, health_percent_left)
 

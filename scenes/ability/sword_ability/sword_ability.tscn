@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://rd76pobs5q3e"]
+[gd_scene load_steps=8 format=3 uid="uid://rd76pobs5q3e"]
 
 [ext_resource type="Texture2D" uid="uid://dyg87i2ku8ptg" path="res://scenes/ability/sword_ability/tile_0104.png" id="1_06fxa"]
+[ext_resource type="PackedScene" uid="uid://bpb175pjeuy28" path="res://scenes/component/hitbox_component/hitbox_component.tscn" id="1_8a4jp"]
+[ext_resource type="Script" path="res://scenes/ability/sword_ability/sword_ability.gd" id="1_kmvkm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_47rp2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgf1j"]
 size = Vector2(30, 30)
 
 [sub_resource type="Animation" id="Animation_ldes7"]
@@ -35,7 +37,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/2/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -90,7 +92,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Hitbox/CollisionShape2D:disabled")
+tracks/3/path = NodePath("HitboxComponent/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -107,14 +109,13 @@ _data = {
 }
 
 [node name="SwordAbility" type="Node2D"]
+script = ExtResource("1_kmvkm")
 
-[node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 0
+[node name="HitboxComponent" parent="." instance=ExtResource("1_8a4jp")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 position = Vector2(15, -4)
-shape = SubResource("RectangleShape2D_47rp2")
+shape = SubResource("RectangleShape2D_vgf1j")
 disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

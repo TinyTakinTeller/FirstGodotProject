@@ -15,7 +15,7 @@ TLDR CONFIGURATION:
 - input map: arrow keys and w,a,s,d
 - viewport: 640 x 360, stretch mode: viewport, window override: 1920 x 1080
 - name 2D physic layers 1,2,3 (for Mask/Layer), e.g. Terrain, Player, Enemy
-- (-> toggle on -> EDIT: off // after introducing smoothing acceleration) Snap 2D Transforms to Pixels
+-  Snap 2D Transforms to Pixels: (chapter 1: on -> chapter 2: off)
 ```
 
 </details>
@@ -365,7 +365,17 @@ ADD *above components to BasicEnemy
 BONUS modulate color to indicate damage
 
 
-video 13 - TBA
+video 13 - Implementing damage (hitbox and hurtbox component's)
+
+TIP: RIGHT CLICK node inside scene > Save branch as scene
+Hitbox (Area2D) -> HitboxComponent, HurtboxComponent // new scenes from sword & enemy old scenes // return CollisionShape2D to old scenes
+sword_ability.gd // @onready $HitboxComponent
+hitbox_component.gd // var damage = 0
+hurtbox_component.gd // @export var health_component, BONUS: hurt signal
+sword_ability_controller.gd
+
+
+video 14 - TBA
 
 
 

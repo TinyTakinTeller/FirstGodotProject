@@ -24,6 +24,6 @@ func health_percent() -> float:
 
 func _check_death() -> void:
 	if self.current_health == 0:
-		died.emit()
+		self.died.emit()
 		self.owner.queue_free()
 
