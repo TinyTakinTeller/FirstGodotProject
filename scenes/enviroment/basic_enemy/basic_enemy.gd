@@ -7,7 +7,7 @@ const MAX_SPEED: float = 40
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$HurtboxComponent.hurt.connect(_on_hurt)
+	$HealthComponent.health_changed.connect(_on_health_changed)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,6 +23,6 @@ func _get_direction_to_player() -> Vector2:
 	return Vector2.ZERO
 
 
-func _on_hurt(_damage: float, health_percent_left: float) -> void:
+func _on_health_changed(health_percent_left: float) -> void:
 	self.sprite.modulate = Color(1, health_percent_left, health_percent_left)
 

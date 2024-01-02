@@ -446,7 +446,13 @@ player.gd
 
 video 21 - Player Health Bar
 
-TBA
+Player scene
+. > add ProgressBar // show percentage: off, min value 0, max value 1, custom minimum x 32 y 6, transform.size (reset button)
+	.. transform . pivot offset x 16 y 3 -> x center it, y above it player
+	.. Theme Overrides . Styles . Fill: StyleBoxFlat > BG Color: green (PRO TIP: pick hexcode from tileset) // 43e1b3
+		... Border Width: 2 2 2 2 // 3f2631
+health_component.gd // signal health_changed
+player.gd // connect health_changed signal
 
 
 video 22 - Creating the Victory Screen

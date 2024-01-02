@@ -7,6 +7,7 @@ const DAMAGE_INTERVAL: float = 0.5
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var damage_interval_timer: Timer = $DamageIntervalTimer
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var health_progress_bar: ProgressBar = $HealthProgressBar
 
 var colliding_bodies_count = 0
 
@@ -15,7 +16,10 @@ var colliding_bodies_count = 0
 func _ready():
 	$HurtboxArea2D.body_entered.connect(_on_body_entered)
 	$HurtboxArea2D.body_exited.connect(_on_body_exited)
-	damage_interval_timer.timeout.connect(_on_damage_interval_timer_timeout)
+	self.damage_interval_timer.timeout.connect(_on_damage_interval_timer_timeout)
+	self.health_component.health_changed.connect(_on_health_changed)
+	self._update_health_progress_bar(self.health_component.health_percent())
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -39,8 +43,12 @@ func _check_deal_damage() -> void:
 	
 	self.health_component.damage(1)
 	self.damage_interval_timer.start(self.DAMAGE_INTERVAL)
-	var health_percent_left: float = self.health_component.health_percent()
-	self.sprite.modulate = Color(1, health_percent_left, health_percent_left)
+
+
+func _update_health_progress_bar(value: float):
+	self.health_progress_bar.value = value
+	self.sprite.modulate = Color(1, value, value)
+
 
 func _on_body_entered(_body: Node2D) -> void:
 	self.colliding_bodies_count += 1
@@ -53,4 +61,8 @@ func _on_body_exited(_body: Node2D) -> void:
 
 func _on_damage_interval_timer_timeout() -> void:
 	self._check_deal_damage()
+
+
+func _on_health_changed(health_percent_left: float) -> void:
+	self._update_health_progress_bar(health_percent_left)
 
