@@ -24,5 +24,5 @@ func _get_direction_to_player() -> Vector2:
 
 
 func _on_hurt(_damage: float, health_percent_left: float) -> void:
-	sprite.modulate = Color(1, health_percent_left, health_percent_left)
+	self.sprite.modulate = Color(1, health_percent_left, health_percent_left)
 

@@ -434,7 +434,14 @@ BONUS: add "_" prefix to private methods
 
 video 20 - Adding Player Health
 
-TBA
+Player scene
+. > rename Area2D to PickupArea2D
+. > add HealthComponent
+. > add Area2D ("HurtboxArea2D") > CollisionShape2D . Circle . radius = 7 px // Layer off Mask 4 (BasicEnemy Layer 4)
+. > add Timer ("DamageIntervalTimer") // 0.5, one-shot
+player.gd 
+. > connect signal body_entered, body_exited
+. > BONUS modulate sprite redness to indicate damage
 
 
 video 21 - Player Health Bar
@@ -462,7 +469,7 @@ Godot Engine QOL improvements wishlist is below.
 <details>
 
 ```
-- Member variable hightlight: https://github.com/godotengine/godot/pull/74393 (TODO: refactor the project to not use 'self' on as a workaround for this.)
+- Member variable hightlight: https://github.com/godotengine/godot/pull/74393 (TODO: refactor the project to not use 'self' as a workaround for this.)
 - Mandatory export flag: https://github.com/godotengine/godot/pull/68420 (TODO: refactor this project to use this feature.)
 ```
 
