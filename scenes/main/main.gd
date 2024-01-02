@@ -1,23 +1,16 @@
 extends Node
-class_name ArenaTimeManager
 
 @export var end_screen_ui_scene: PackedScene
-
-@onready var timer: Timer = $Timer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.timer.timeout.connect(_on_timer_timeout)
+	$Entities/Player.health_component.died.connect(_on_player_died)
 
 
-func get_time() -> float:
-	return self.timer.wait_time - self.timer.time_left
-
-
-func _on_timer_timeout() -> void:
+func _on_player_died() -> void:
 	var ui_layer: Node = self.get_tree().get_first_node_in_group("ui_layer")
 	var end_screen_ui: EndScreenUI = self.end_screen_ui_scene.instantiate() as EndScreenUI
 	ui_layer.add_child(end_screen_ui)
-	end_screen_ui.set_victory()
+	end_screen_ui.set_defeat()
 

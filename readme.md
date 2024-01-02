@@ -1,4 +1,17 @@
-## Personal Project To Learn Basics of Godot 4
+## First Godot Project
+
+First project to learn the Godot 4 Engine.
+
+
+
+
+## Releases
+
+*Comming Soon*
+
+
+
+## Development Log
 
 Following Udemy course **Create a Complete 2D Survivors Style Game in Godot 4** (with personal tweaks).
 
@@ -24,7 +37,7 @@ Personal Notes for **Chapter 1** of the course are below. - **The basic project:
 <details>
 
 ```
-LEARN GODOT 2024 (Godot Stable 4.2.1)
+LEARN GODOT 2024
 
 LINK TO VIDEO MATERIAL: https://www.udemy.com/course/create-a-complete-2d-arena-survival-roguelike-game-in-godot-4/
 
@@ -473,13 +486,25 @@ arena_time_manager.gd // spawn VictoryScreenUI
 
 video 23 - Creating the Defeat Screen
 
-TBA
-
+RENAME VictoryScreenUI to EndScreenUI
+end_screen.gd // set_defeat, set_victory
+main.gd // %Player, connect died signal
 
 
 ```
 
 </details>
+
+Personal Notes for **Chapter 3** are TBA.
+
+Personal Notes for **Chapter 4** are TBA.
+
+Personal Notes for **Chapter 5** are TBA.
+
+Personal Notes for **Chapter 6** are TBA.
+
+Personal Notes for **Personal Extensions** are TBA.
+
 
 Godot Engine QOL improvements wishlist is below.
 
@@ -492,7 +517,13 @@ Godot Engine QOL improvements wishlist is below.
 
 </details>
 
+
+
+## Documentation
+
 Conventions:
 - I prefer statically typed variables and functions
 - I use `self` keyword to force syntax highlight on member variables and when calling member functions
+
+*Code Documentation Comming Soon*
 

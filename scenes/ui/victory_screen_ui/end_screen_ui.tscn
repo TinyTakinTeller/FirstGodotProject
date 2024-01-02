@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://ckk5cylg4huhx"]
 
-[ext_resource type="Script" path="res://scenes/ui/victory_screen_ui/victory_screen_ui.gd" id="1_qusws"]
+[ext_resource type="Script" path="res://scenes/ui/victory_screen_ui/end_screen_ui.gd" id="1_538gb"]
 
-[node name="VictoryScreenUI" type="CanvasLayer"]
+[node name="EndScreenUI" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_qusws")
+script = ExtResource("1_538gb")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -29,18 +29,20 @@ theme_override_constants/margin_bottom = 8
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
-text = "Victory"
+text = "Title"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="DescriptionLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
-text = "You Won"
+text = "Description"
 horizontal_alignment = 1
 
 [node name="RestartButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
