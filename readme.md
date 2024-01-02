@@ -457,7 +457,18 @@ player.gd // connect health_changed signal
 
 video 22 - Creating the Victory Screen
 
-TBA
+ADD CanvasLayer ("VictoryScreenUI")
+	. MarginContainer > preset
+		. PanelContainer > Container Sizing . H&V : Shrink Center
+			. MarginContainer > Constants 8 8 8 8, Layour . Custom Minimum Size . x 180
+				. VBoxContainer
+					. Label > Text: Victory, Container Sizing . H&V Aligment: Shrink Center, Font Size: 24 px
+					. Label > Text: You won, Container Sizing . H&V Aligment: Shrink Center, Font Size: 24 px
+					. Button > Text: Restart -> right click and mark as unique name // use %
+					. Button > Text: Quit -> right click and mark as unique name // use %
+. > Process . Mode = Always
+victory_screen_ui.gd // signal pressed
+arena_time_manager.gd // spawn VictoryScreenUI
 
 
 video 23 - Creating the Defeat Screen

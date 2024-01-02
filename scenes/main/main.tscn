@@ -13,7 +13,7 @@
 
 [node name="Main" type="Node"]
 
-[node name="UI" type="Node" parent="."]
+[node name="UI" type="Node" parent="." groups=["ui_layer"]]
 
 [node name="ArenaTimeUI" parent="UI" node_paths=PackedStringArray("arena_time_manager") instance=ExtResource("1_is76a")]
 arena_time_manager = NodePath("../../Manager/ArenaTimeManager")

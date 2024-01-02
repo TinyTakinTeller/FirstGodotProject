@@ -19,8 +19,9 @@ func _on_level_up(_new_level: int) -> void:
 	
 	var choosen_upgrade: AbilityUpgrade = upgrade_pool.pick_random()
 	
+	var ui_layer: Node = self.get_tree().get_first_node_in_group("ui_layer")
 	var upgrade_screen_ui: UpgradeScreenUI = upgrade_screen_ui_scene.instantiate() as UpgradeScreenUI
-	self.add_child(upgrade_screen_ui)
+	ui_layer.add_child(upgrade_screen_ui)
 	upgrade_screen_ui.set_ability_upgrades([choosen_upgrade] as Array[AbilityUpgrade])
 	upgrade_screen_ui.upgrade_selected.connect(_on_upgrade_selected)
 
