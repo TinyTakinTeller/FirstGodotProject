@@ -9,6 +9,10 @@ First project to learn the Godot 4 Engine.
 
 *Comming Soon*
 
+Chapter 2 screenshoot:
+
+![image](https://github.com/TinyTakinTeller/FirstGodotProject/assets/155020210/4d3e6cce-b525-4001-8508-13cf4a8f916c)
+
 
 
 ## Development Log
@@ -511,12 +515,17 @@ enemy_manager.gd > connect difficulty_increased // increase spawn rate
 
 video 2. Improving the TileMap
 
-TBA
+TileMap (scene) > Tiles
+. > TileSet (tab) > (Setup) select wall tiles > configure wall tiles (Terrains)
+. > Tile Set (property) > add physics layer: Layer 1, Mask none > TileSet (tab) (Paint physics layer 0)
+TileMap (scene) > Terrain
+. > paint arena walls
 
 
 video 3. Preventing Invalid Spawning
 
-TBA
+enemy_manager.gd i.e. spawner_utils.gd // raycast check if enemy is inside arena walls
+TIP: use "1 << x" to reference value of bit x // bit shift operator
 
 
 video 4. Creating an Axe Ability

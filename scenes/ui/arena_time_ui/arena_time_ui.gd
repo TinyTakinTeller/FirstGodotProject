@@ -1,5 +1,4 @@
 extends CanvasLayer
-class_name ArenaTimeUI
 
 @export var arena_time_manager: ArenaTimeManager
 
@@ -12,7 +11,7 @@ func _process(_delta):
 		return
 
 	var time_elapsed: float = self.arena_time_manager.get_time()
-	self.label.text = ArenaTimeUI._format(time_elapsed)
+	self.label.text = _format(time_elapsed)
 
 
 static func _format(seconds: float) -> String:

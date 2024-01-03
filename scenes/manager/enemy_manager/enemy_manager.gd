@@ -31,7 +31,8 @@ func _on_timer_timeout() -> void:
 
 func _spawn_enemy_instance(target: Node2D) -> void:
 	var entities_layer: Node2D = self.get_tree().get_first_node_in_group("entities_layer")
-	SpawnerUtility.spawn_instance(self.enemy_scene, target, self.spawn_radius, entities_layer)
+	SpawnerUtility.spawn_instance_bounded(
+		self.enemy_scene, target, self.spawn_radius, entities_layer, 0)
 
 
 func _on_arena_difficulty_increased(arena_difficulty: int) -> void:
