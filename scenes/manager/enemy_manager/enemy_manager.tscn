@@ -9,4 +9,5 @@ enemy_scene = ExtResource("2_pn3wo")
 spawn_radius = 375.0
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 autostart = true

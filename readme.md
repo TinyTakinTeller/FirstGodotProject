@@ -497,6 +497,149 @@ main.gd // %Player, connect died signal
 
 Personal Notes for **Chapter 3** are TBA.
 
+<details>
+
+```
+Chapter 3. Gameplay and Visual Improvements
+
+
+video 1. Increase Difficulty Over Time
+
+arena_time_manager.gd > const DIFFICULTY_INTERVAL, signal difficulty_increased
+enemy_manager.gd > connect difficulty_increased // increase spawn rate
+
+
+video 2. Improving the TileMap
+
+TBA
+
+
+video 3. Preventing Invalid Spawning
+
+TBA
+
+
+video 4. Creating an Axe Ability
+
+TBA
+
+
+video 5. Enabling Acquisition of Axe Ability
+
+TBA
+
+
+video 6. Prevent Abilities from Being Chosen Twice
+
+TBA
+
+
+video 7. Animating the Player
+
+TBA
+
+
+video 8. Animating the Enemy
+
+TBA
+
+
+video 9. Animating Enemy Death
+
+TBA
+
+
+video 10. Adding a Wizard Enemy
+
+TBA
+
+
+video 11. Using a Weighted Table for Enemy Spawning
+
+TBA
+
+
+video 12. Animating the Wizard
+
+TBA
+
+
+video 13. Animating the Experience Vial Pickups
+
+TBA
+
+
+
+video 14. Adding a Custom Font
+
+TBA
+
+
+
+video 15. Adding Floating Damage Text
+
+TBA
+
+
+video 16. Implementing a Flash on Enemy Hit
+
+TBA
+
+
+video 17. Adding Ability Damage Upgrades
+
+TBA
+
+
+video 18. Introduction to UI Theming
+
+TBA
+
+
+video 19. Finalizing Upgrade Card Theme
+
+TBA
+
+
+video 20. Animating the Upgrade Card
+
+TBA
+
+
+video 21. Improving the Upgrade Selection Screen
+
+TBA
+
+
+video 22. Applying a Style to the Experience Bar
+
+TBA
+
+
+video 23. Animating Victory and Defeat Screens
+
+TBA
+
+
+video 24. Applying Styles to the Buttons
+
+TBA
+
+
+video 25. Creating a Player Move Speed Upgrade
+
+TBA
+
+
+video 26. Adding a Vignette
+
+TBA
+
+
+```
+
+</details>
+
 Personal Notes for **Chapter 4** are TBA.
 
 Personal Notes for **Chapter 5** are TBA.
