@@ -9,7 +9,7 @@ First project to learn the Godot 4 Engine.
 
 *Comming Soon*
 
-Chapter 2 screenshoot:
+Chapter 2 screenshot:
 
 ![image](https://github.com/TinyTakinTeller/FirstGodotProject/assets/155020210/4d3e6cce-b525-4001-8508-13cf4a8f916c)
 
@@ -499,7 +499,7 @@ main.gd // %Player, connect died signal
 
 </details>
 
-Personal Notes for **Chapter 3** are TBA.
+Personal Notes for **Chapter 3** of the course are below. - *In Progress...*
 
 <details>
 
@@ -530,7 +530,9 @@ TIP: use "1 << x" to reference value of bit x // bit shift operator
 
 video 4. Creating an Axe Ability
 
-TBA
+AxeAbilityController > ... > axe_ability_controller.gd
+AxeAbility > ... > axe_ability.gd
+TIP: using tweens over AnimationPlayer is an alternate way to animate // create_tween()
 
 
 video 5. Enabling Acquisition of Axe Ability

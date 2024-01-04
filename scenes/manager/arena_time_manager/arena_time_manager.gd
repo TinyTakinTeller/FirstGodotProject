@@ -18,7 +18,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var time_elapsed: float = timer.wait_time - timer.time_left
 	if time_elapsed >= self.DIFFICULTY_INTERVAL * (self.arena_difficulty + 1):
 		self.arena_difficulty += 1
