@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://7u5tog6k4j5t"]
+[gd_scene load_steps=11 format=3 uid="uid://7u5tog6k4j5t"]
 
 [ext_resource type="Script" path="res://scenes/enviroment/player/player.gd" id="1_hohw5"]
 [ext_resource type="Texture2D" uid="uid://j3cegi3cduwa" path="res://scenes/enviroment/player/player.png" id="1_ug2em"]
 [ext_resource type="PackedScene" uid="uid://dllayro17g0qh" path="res://scenes/controller/sword_ability_controller/sword_ability_controller.tscn" id="2_30pv4"]
 [ext_resource type="Script" path="res://scenes/component/health_component/health_component.gd" id="2_bro86"]
 [ext_resource type="PackedScene" uid="uid://rd76pobs5q3e" path="res://scenes/ability/sword_ability/sword_ability.tscn" id="3_lkvm1"]
-[ext_resource type="PackedScene" uid="uid://b0dqxtfppkl1e" path="res://scenes/controller/axe_ability_controller/axe_ability_controller.tscn" id="5_6cjxt"]
-[ext_resource type="PackedScene" uid="uid://dsk2buswilyqf" path="res://scenes/ability/axe_ability/axe_ability.tscn" id="6_ngxa7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uc6jv"]
 radius = 32.0
@@ -37,13 +35,10 @@ script = ExtResource("1_hohw5")
 script = ExtResource("2_bro86")
 max_health = 10.0
 
-[node name="AbilityManager" type="Node" parent="."]
+[node name="Ability" type="Node" parent="."]
 
-[node name="SwordAbilityController" parent="AbilityManager" instance=ExtResource("2_30pv4")]
+[node name="SwordAbilityController" parent="Ability" instance=ExtResource("2_30pv4")]
 sword_ability = ExtResource("3_lkvm1")
-
-[node name="AxeAbilityController" parent="AbilityManager" instance=ExtResource("5_6cjxt")]
-axe_ability = ExtResource("6_ngxa7")
 
 [node name="DamageIntervalTimer" type="Timer" parent="."]
 wait_time = 0.5

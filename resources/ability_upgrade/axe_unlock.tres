@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://8u6oxdj2wsjv"]
+
+[ext_resource type="PackedScene" uid="uid://b0dqxtfppkl1e" path="res://scenes/controller/axe_ability_controller/axe_ability_controller.tscn" id="1_qjsno"]
+[ext_resource type="Script" path="res://resources/ability_upgrade/ability_unlock.gd" id="2_ferxn"]
+
+[resource]
+script = ExtResource("2_ferxn")
+ability_controller_scene = ExtResource("1_qjsno")
+id = "axe_unlock"
+name = "Axe Ability"
+description = "Spawns a spinning axe around player."
+max_quantity = 1

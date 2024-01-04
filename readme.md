@@ -537,12 +537,14 @@ TIP: using tweens over AnimationPlayer is an alternate way to animate // create_
 
 video 5. Enabling Acquisition of Axe Ability
 
-TBA
+ADD axe_unlock upgrade resource
+BONUS: use shuffle + resize instead of filter, to pick random sub-array
+BONUS: add max_quantity to upgrade resources
 
 
 video 6. Prevent Abilities from Being Chosen Twice
 
-TBA
+SKIP (handled in previous chaper as BONUS)
 
 
 video 7. Animating the Player

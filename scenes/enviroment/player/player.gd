@@ -8,6 +8,7 @@ const DAMAGE_INTERVAL: float = 0.5
 @onready var damage_interval_timer: Timer = $DamageIntervalTimer
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var health_progress_bar: ProgressBar = $HealthProgressBar
+@onready var ability_layer: Node = $Ability
 
 var colliding_bodies_count = 0
 
@@ -18,6 +19,8 @@ func _ready():
 	$HurtboxArea2D.body_exited.connect(_on_body_exited)
 	self.damage_interval_timer.timeout.connect(_on_damage_interval_timer_timeout)
 	self.health_component.health_changed.connect(_on_health_changed)
+	GameEvents.ability_upgrade_added.connect(_on_ability_upgrade_added)
+	
 	self._update_health_progress_bar(self.health_component.health_percent())
 
 
@@ -65,4 +68,11 @@ func _on_damage_interval_timer_timeout() -> void:
 
 func _on_health_changed(health_percent_left: float) -> void:
 	self._update_health_progress_bar(health_percent_left)
+
+
+func _on_ability_upgrade_added(upgrade: AbilityUpgrade, _current_upgrades: Dictionary) -> void:
+	if not upgrade is AbilityUnlock:
+		return 
+	
+	self.ability_layer.add_child((upgrade as AbilityUnlock).ability_controller_scene.instantiate())
 

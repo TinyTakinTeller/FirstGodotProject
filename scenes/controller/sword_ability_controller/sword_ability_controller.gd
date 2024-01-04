@@ -1,6 +1,6 @@
 extends Node
 
-const MIN_WAIT_TIME: float = 0.01
+const MIN_WAIT_TIME: float = 0.1
 
 @export var sword_ability: PackedScene
 @export var ability_range: float
@@ -62,7 +62,7 @@ func _get_closest_enemy_in_radius(target: Node2D, radius: float) -> Node2D:
 
 func _on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary) -> void:
 	if upgrade.id != "sword_rate":
-		pass
+		return
 	
 	var percent_reduction: float = current_upgrades["sword_rate"]["quantity"] * 0.1
 	self.timer.start(self.base_wait_time * max(1 - percent_reduction, self.MIN_WAIT_TIME))
