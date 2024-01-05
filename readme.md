@@ -567,17 +567,18 @@ TIP: use particle generators as reusable animations
 
 video 10. Adding a Wizard Enemy
 
-TBA
+ADD VelocityComponent to BasicEnemy // refactor movement logic
+ADD WizardEnemy // duplicate BasicEnemy and change: name, health, max_speed, acceleration
 
 
 video 11. Using a Weighted Table for Enemy Spawning
 
-TBA
+TIP: class_name scripts do not need to extend anything (not even base node), can be instantiated with .new()
 
 
 video 12. Animating the Wizard
 
-TBA
+TIP: functions can be called as key frames
 
 
 video 13. Animating the Experience Vial Pickups
@@ -585,11 +586,9 @@ video 13. Animating the Experience Vial Pickups
 TBA
 
 
-
 video 14. Adding a Custom Font
 
 TBA
-
 
 
 video 15. Adding Floating Damage Text
