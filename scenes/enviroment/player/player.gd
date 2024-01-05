@@ -6,9 +6,11 @@ const DAMAGE_INTERVAL: float = 0.5
 
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var damage_interval_timer: Timer = $DamageIntervalTimer
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: Sprite2D = $Visual/Sprite2D
 @onready var health_progress_bar: ProgressBar = $HealthProgressBar
 @onready var ability_layer: Node = $Ability
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var visual_layer: Node2D = $Visual
 
 var colliding_bodies_count = 0
 
@@ -26,10 +28,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var target_velocity: Vector2 = self._get_direction() * self.MAX_SPEED
+	var movement_vector: Vector2 = self._get_direction()
+	var target_velocity: Vector2 = movement_vector * self.MAX_SPEED
 	self.velocity = self.velocity.lerp(
 		target_velocity, 1 - exp(-delta * self.ACCELERATION_SMOOTHING_FACTOR))
 	self.move_and_slide()
+	
+	if movement_vector.x != 0 || movement_vector.y != 0:
+		self.animation_player.play("walk")
+	else:
+		self.animation_player.play("RESET")
+	var sign_x: int = sign(movement_vector.x)
+	if sign_x != 0:
+		self.visual_layer.scale = Vector2(sign_x, 1)
 
 
 func _get_direction() -> Vector2:

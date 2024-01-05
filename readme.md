@@ -549,17 +549,20 @@ SKIP (handled in previous chaper as BONUS)
 
 video 7. Animating the Player
 
-TBA
+ADD AnimationPlayer to Player scene > "walk" animation > add key frames for properties: position, rotation, scale
+TIP: use "rec" (record) button (top right) to record key frames instead of manually adding them 
+TIP: node transforms inherit parent transforms
 
 
 video 8. Animating the Enemy
 
-TBA
+ADD AnimationPlayer to BasicEnemy scene > "walk" animation > add key frames for properties: position, rotation, scale
 
 
 video 9. Animating Enemy Death
 
-TBA
+ADD DeathComponent to BasicEnemy
+TIP: use particle generators as reusable animations
 
 
 video 10. Adding a Wizard Enemy

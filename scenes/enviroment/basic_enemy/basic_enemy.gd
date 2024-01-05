@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 const MAX_SPEED: float = 40
 
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: Sprite2D = $Visual/Sprite2D
+@onready var visual_layer: Node2D = $Visual
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,8 +13,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	self.velocity = _get_direction_to_player() * self.MAX_SPEED
+	var movement_vector: Vector2 = self._get_direction_to_player()
+	self.velocity = movement_vector * self.MAX_SPEED
 	self.move_and_slide()
+	
+	var sign_x: int = sign(movement_vector.x)
+	if sign_x != 0:
+		self.visual_layer.scale = Vector2(-sign_x, 1)
 
 
 func _get_direction_to_player() -> Vector2:
