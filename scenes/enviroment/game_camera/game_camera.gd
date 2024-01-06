@@ -5,11 +5,11 @@ const SMOOTHING_FACTOR: float = 20
 var target_position: Vector2 = Vector2.ZERO
 
 
-func _ready():
+func _ready() -> void:
 	self.make_current()
 
 
-func _process(delta):
+func _process(delta: float) -> void:
 	self._acquire_target()
 	self.global_position = self.global_position.lerp(
 		self.target_position, 1.0 - exp(-delta * self.SMOOTHING_FACTOR)

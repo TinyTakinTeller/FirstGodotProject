@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var progress_bar: ProgressBar = $MarginContainer/ProgressBar
 
 
-func _ready():
+func _ready() -> void:
 	self.progress_bar.value = 0
 	self.experience_manager.experience_updated.connect(self._on_experience_upated)
 

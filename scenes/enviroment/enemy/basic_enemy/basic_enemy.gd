@@ -5,11 +5,11 @@ extends CharacterBody2D
 @onready var velocity_component: VelocityComponent = $VelocityComponent
 
 
-func _ready():
+func _ready() -> void:
 	$HealthComponent.health_changed.connect(self._on_health_changed)
 
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	var player: Node2D = self.get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
 		return

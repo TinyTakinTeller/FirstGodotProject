@@ -5,7 +5,7 @@ class_name HurtboxComponent
 @export var floating_text_scene: PackedScene
 
 
-func _ready():
+func _ready() -> void:
 	self.area_entered.connect(self._on_area_entered)
 
 

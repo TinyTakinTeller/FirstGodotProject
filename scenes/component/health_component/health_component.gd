@@ -9,7 +9,7 @@ signal died
 var current_health: float
 
 
-func _ready():
+func _ready() -> void:
 	self.current_health = self.max_health
 
 

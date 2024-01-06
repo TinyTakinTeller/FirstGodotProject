@@ -12,7 +12,7 @@ var damage: float = 1
 var base_wait_time: float = 1.5
 
 
-func _ready():
+func _ready() -> void:
 	self.timer.timeout.connect(self._on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(self._on_ability_upgrade_added)
 
@@ -50,7 +50,7 @@ func _get_closest_enemy_in_radius(target: Node2D, radius: float) -> Node2D:
 		return null
 
 	enemies = enemies.filter(
-		func(enemy: Node2D): return (
+		func(enemy: Node2D) -> bool: return (
 			enemy.global_position.distance_squared_to(target.global_position) < pow(radius, 2)
 		)
 	)

@@ -13,7 +13,7 @@ const MIN_SPAWN_TIME: float = 0.3
 var enemy_table: WeightedTable = WeightedTable.new()
 
 
-func _ready():
+func _ready() -> void:
 	self.enemy_table.add_item(basic_enemy_scene, 10)
 
 	self.timer.timeout.connect(self._on_timer_timeout)

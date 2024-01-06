@@ -8,7 +8,7 @@ class_name AxeAbilityController
 var damage: float = 2
 
 
-func _ready():
+func _ready() -> void:
 	self.timer.timeout.connect(self._on_timer_timeout)
 	GameEvents.ability_upgrade_added.connect(self._on_ability_upgrade_added)
 

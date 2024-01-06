@@ -8,7 +8,7 @@ signal upgrade_selected(upgrade: AbilityUpgrade)
 @onready var card_container: HBoxContainer = $MarginContainer/CardContainer
 
 
-func _ready():
+func _ready() -> void:
 	self.get_tree().paused = true
 
 

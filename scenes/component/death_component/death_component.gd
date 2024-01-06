@@ -6,7 +6,7 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
-func _ready():
+func _ready() -> void:
 	$GPUParticles2D.texture = self.sprite.texture
 	self.health_component.died.connect(self._on_died)
 

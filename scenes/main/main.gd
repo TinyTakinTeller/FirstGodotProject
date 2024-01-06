@@ -3,7 +3,7 @@ extends Node
 @export var end_screen_ui_scene: PackedScene
 
 
-func _ready():
+func _ready() -> void:
 	$Entities/Player.health_component.died.connect(self._on_player_died)
 
 

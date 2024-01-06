@@ -10,7 +10,7 @@ var experience_growth: float = 5
 var current_level: int = 1
 
 
-func _ready():
+func _ready() -> void:
 	GameEvents.experience_vial_collected.connect(self._on_experience_vial_collected)
 
 

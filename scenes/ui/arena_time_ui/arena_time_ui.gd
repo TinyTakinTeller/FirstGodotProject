@@ -6,7 +6,7 @@ class_name ArenaTimeUI
 @onready var label: Label = $MarginContainer/Label
 
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	if self.arena_time_manager == null:
 		return
 

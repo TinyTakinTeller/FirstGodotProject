@@ -39,6 +39,7 @@ TLDR CONFIGURATION:
 - autoload configuration: game_events.tscn
 - project custom theme resource: theme.tres
 - configure and enable Format on Save plugin
+- turn on Warn for Untyped Declaration in Debug
 ```
 
 </details>
@@ -615,11 +616,12 @@ bewteen videos 15-16: refactor:
 > refactored packages and installed format_on_save addon (addons are git ignored)
 
 
-video 16. Implementing a Flash on Enemy Hit (hit flash shader, refactor packages)
+video 16. Implementing a Flash on Enemy Hit (hit flash shader)
 
 HitFlashComponent scene
 ShaderMaterial resource
 TIP: resource is a singleton (one instance is shared), excpet when Resource . Local to Scene : On
+TIP: QUESTION: shaders vs particle node ?
 
 
 video 17. Adding Ability Damage Upgrades
@@ -701,7 +703,7 @@ Godot Engine QOL improvements wishlist is below.
 ## Documentation
 
 Code style conventions:
-- Use statically typed variables and functions (TODO: add regex to verify this)
+- Use statically typed variables and functions
 - Use `self` keyword to force syntax highlight on member variables and when calling member functions
 - Use "Format on Save" addon from AssetLib with: https://github.com/Scony/godot-gdscript-toolkit
 - Mostly follow: https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html

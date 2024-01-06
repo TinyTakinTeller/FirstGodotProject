@@ -7,7 +7,7 @@ signal selected
 @onready var description_label: Label = %DescriptionLabel
 
 
-func _ready():
+func _ready() -> void:
 	self.gui_input.connect(self._on_gui_input)
 
 

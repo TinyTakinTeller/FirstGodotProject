@@ -10,7 +10,7 @@ const UPGRADE_OPTIONS: int = 2
 var current_upgrades: Dictionary = {}
 
 
-func _ready():
+func _ready() -> void:
 	self.experience_manager.level_up.connect(self._on_level_up)
 
 
@@ -43,7 +43,7 @@ func _apply_upgrade(upgrade: AbilityUpgrade) -> void:
 
 	if self.current_upgrades[upgrade.id]["quantity"] >= upgrade.max_quantity:
 		self.upgrade_pool = (
-			self.upgrade_pool.filter(func(e: AbilityUpgrade): return e.id != upgrade.id)
+			self.upgrade_pool.filter(func(e: AbilityUpgrade) -> bool: return e.id != upgrade.id)
 			as Array[AbilityUpgrade]
 		)
 

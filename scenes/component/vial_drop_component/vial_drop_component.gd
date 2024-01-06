@@ -6,7 +6,7 @@ extends Node
 @export var spawn_radius: float = 1
 
 
-func _ready():
+func _ready() -> void:
 	self.health_component.died.connect(self._on_died)
 
 

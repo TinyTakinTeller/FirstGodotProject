@@ -12,11 +12,11 @@ const DIFFICULTY_INTERVAL: float = 5
 var arena_difficulty: int = 0
 
 
-func _ready():
+func _ready() -> void:
 	self.timer.timeout.connect(self._on_timer_timeout)
 
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	var time_elapsed: float = timer.wait_time - timer.time_left
 	if time_elapsed >= self.DIFFICULTY_INTERVAL * (self.arena_difficulty + 1):
 		self.arena_difficulty += 1

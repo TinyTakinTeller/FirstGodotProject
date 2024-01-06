@@ -11,7 +11,7 @@ var base_rotation: Vector2 = Vector2.RIGHT
 var base_sign: int = 1
 
 
-func _ready():
+func _ready() -> void:
 	self.base_rotation = Vector2.RIGHT.rotated(randf_range(0, TAU))
 	self.base_sign = 1 - 2 * randi_range(0, 1)
 

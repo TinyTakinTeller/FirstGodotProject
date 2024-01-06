@@ -4,11 +4,11 @@ extends Node2D
 @onready var sprite: Sprite2D = $Sprite2D
 
 
-func _ready():
+func _ready() -> void:
 	$Hitbox.area_entered.connect(self._on_area_entered)
 
 
-func collect():
+func collect() -> void:
 	GameEvents.emit_experience_vial_collected(1)
 	self.queue_free()
 

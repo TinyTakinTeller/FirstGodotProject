@@ -7,17 +7,17 @@ extends CharacterBody2D
 var is_moving: bool = true
 
 
-func _ready():
+func _ready() -> void:
 	$HealthComponent.health_changed.connect(self._on_health_changed)
 
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	if not self.is_moving:
 		self.velocity_component.decelerate()
 		self.velocity_component.move()
 		return
 
-	var player = self.get_tree().get_first_node_in_group("player") as Node2D
+	var player: Node2D = self.get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
 		return
 

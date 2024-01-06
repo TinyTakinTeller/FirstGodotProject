@@ -18,7 +18,7 @@ const DAMAGE_INTERVAL: float = 0.5
 var colliding_bodies_count: int = 0
 
 
-func _ready():
+func _ready() -> void:
 	self.hurtbox_area2d.body_entered.connect(self._on_body_entered)
 	self.hurtbox_area2d.body_exited.connect(self._on_body_exited)
 	self.damage_interval_timer.timeout.connect(self._on_damage_interval_timer_timeout)
@@ -28,7 +28,7 @@ func _ready():
 	self._update_health_progress_bar(self.health_component.health_percent())
 
 
-func _process(delta):
+func _process(delta: float) -> void:
 	var movement_vector: Vector2 = self._get_direction()
 	var target_velocity: Vector2 = movement_vector * self.MAX_SPEED
 	self.velocity = self.velocity.lerp(
@@ -70,7 +70,7 @@ func _check_deal_damage() -> void:
 		floating_text.label.modulate = Color(1, 0, 0)
 
 
-func _update_health_progress_bar(value: float):
+func _update_health_progress_bar(value: float) -> void:
 	self.health_progress_bar.value = value
 	self.sprite.modulate = Color(1, value, value)
 

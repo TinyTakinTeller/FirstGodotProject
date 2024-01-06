@@ -5,7 +5,7 @@ class_name EndScreenUI
 @onready var description_label: Label = %DescriptionLabel
 
 
-func _ready():
+func _ready() -> void:
 	self.get_tree().paused = true
 	%RestartButton.pressed.connect(self._on_restart_pressed)
 	%QuitButton.pressed.connect(self._on_quit_pressed)

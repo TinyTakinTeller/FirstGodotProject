@@ -7,7 +7,7 @@ extends Node
 var hit_flash_tween: Tween
 
 
-func _ready():
+func _ready() -> void:
 	self.health_component.health_changed.connect(self._on_health_changed)
 	self.sprite.material = self.hit_flash_material
 
