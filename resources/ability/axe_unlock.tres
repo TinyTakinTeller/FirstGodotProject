@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://8u6oxdj2wsjv"]
 
-[ext_resource type="PackedScene" uid="uid://b0dqxtfppkl1e" path="res://scenes/controller/axe_ability_controller/axe_ability_controller.tscn" id="1_qjsno"]
-[ext_resource type="Script" path="res://resources/ability_upgrade/ability_unlock.gd" id="2_ferxn"]
+[ext_resource type="PackedScene" uid="uid://b0dqxtfppkl1e" path="res://scenes/ability/ability_controller/axe_ability_controller/axe_ability_controller.tscn" id="1_qjsno"]
+[ext_resource type="Script" path="res://resources/ability/ability_unlock.gd" id="2_ferxn"]
 
 [resource]
 script = ExtResource("2_ferxn")

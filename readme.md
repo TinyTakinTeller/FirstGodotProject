@@ -36,6 +36,7 @@ TLDR CONFIGURATION:
 - viewport: 640 x 360, stretch mode: viewport, window override: 1920 x 1080
 - name 2D physic layers 1,2,3,4,5 (for Mask/Layer), e.g. Terrain, Player, Enemy, EnemyCollision, Pickup 
 - snap 2D Transforms to Pixels: (chapter 1: on -> chapter 2: off)
+- autoload configuration: game_events.tscn
 - project custom theme resource: theme.tres
 ```
 
@@ -503,7 +504,7 @@ main.gd // %Player, connect died signal
 
 </details>
 
-Personal Notes for **Chapter 3** of the course are below. - **Juicing up: animations, themes, particles... and more content.**
+Personal Notes for **Chapter 3** of the course are below. - **Juicing up: animations, themes, particles, content,...**
 
 <details>
 
@@ -608,9 +609,11 @@ HurtboxComponent > preload floating_text_scene // QUESTION: WHY NOT USE @export 
 BONUS: add FloatingText to player too (refactor spawning to static function)
 
 
-video 16. Implementing a Flash on Enemy Hit
+video 16. Implementing a Flash on Enemy Hit (hit flash shader, refactor packages)
 
-TBA
+HitFlashComponent scene
+ShaderMaterial resource
+TIP: resource is a singleton (one instance is shared), excpet when Resource . Local to Scene : On
 
 
 video 17. Adding Ability Damage Upgrades
@@ -691,9 +694,11 @@ Godot Engine QOL improvements wishlist is below.
 
 ## Documentation
 
-Conventions:
-- I prefer statically typed variables and functions
-- I use `self` keyword to force syntax highlight on member variables and when calling member functions
+Code style conventions:
+- Use statically typed variables and functions (TODO: add regex to verify this)
+- Use `self` keyword to force syntax highlight on member variables and when calling member functions
+- Use "Format on Save" addon from AssetLib with: https://github.com/Scony/godot-gdscript-toolkit
+- Mostly follow: https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html
 
 *Code Documentation Comming Soon*
 

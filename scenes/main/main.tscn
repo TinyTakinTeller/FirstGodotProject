@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://o7b72hn4d3ef"]
 
-[ext_resource type="TileSet" uid="uid://dvbs3ye5sj3wq" path="res://resources/tileset.tres" id="1_4n1tn"]
+[ext_resource type="TileSet" uid="uid://dvbs3ye5sj3wq" path="res://resources/tileset/tileset.tres" id="1_4n1tn"]
 [ext_resource type="PackedScene" uid="uid://dc5d04x1libu1" path="res://scenes/manager/arena_time_manager/arena_time_manager.tscn" id="1_b03w8"]
 [ext_resource type="PackedScene" uid="uid://bo3wx06i08qc" path="res://scenes/ui/arena_time_ui/arena_time_ui.tscn" id="1_is76a"]
 [ext_resource type="PackedScene" uid="uid://dt5dthdadn0kj" path="res://scenes/manager/enemy_manager/enemy_manager.tscn" id="1_jx2sw"]

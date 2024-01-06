@@ -10,4 +10,3 @@ func emit_experience_vial_collected(amount: float) -> void:
 
 func emit_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary) -> void:
 	self.ability_upgrade_added.emit(upgrade, current_upgrades)
-

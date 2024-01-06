@@ -12,12 +12,10 @@ const DIFFICULTY_INTERVAL: float = 5
 var arena_difficulty: int = 0
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	self.timer.timeout.connect(_on_timer_timeout)
+	self.timer.timeout.connect(self._on_timer_timeout)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	var time_elapsed: float = timer.wait_time - timer.time_left
 	if time_elapsed >= self.DIFFICULTY_INTERVAL * (self.arena_difficulty + 1):
@@ -34,4 +32,3 @@ func _on_timer_timeout() -> void:
 	var end_screen_ui: EndScreenUI = self.end_screen_ui_scene.instantiate() as EndScreenUI
 	ui_layer.add_child(end_screen_ui)
 	end_screen_ui.set_victory()
-

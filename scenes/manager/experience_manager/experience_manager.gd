@@ -10,9 +10,8 @@ var experience_growth: float = 5
 var current_level: int = 1
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	GameEvents.experience_vial_collected.connect(_on_experience_vial_collected)
+	GameEvents.experience_vial_collected.connect(self._on_experience_vial_collected)
 
 
 func increment_experience(amount: float) -> void:
@@ -27,4 +26,3 @@ func increment_experience(amount: float) -> void:
 
 func _on_experience_vial_collected(amount: float) -> void:
 	self.increment_experience(amount)
-

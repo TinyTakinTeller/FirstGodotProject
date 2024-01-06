@@ -5,12 +5,10 @@ extends CanvasLayer
 @onready var progress_bar: ProgressBar = $MarginContainer/ProgressBar
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	self.progress_bar.value = 0
-	self.experience_manager.experience_updated.connect(_on_experience_upated)
+	self.experience_manager.experience_updated.connect(self._on_experience_upated)
 
 
 func _on_experience_upated(current_experience: float, target_experience: float) -> void:
 	self.progress_bar.value = current_experience / target_experience
-

@@ -3,9 +3,8 @@ extends Node
 @export var end_screen_ui_scene: PackedScene
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	$Entities/Player.health_component.died.connect(_on_player_died)
+	$Entities/Player.health_component.died.connect(self._on_player_died)
 
 
 func _on_player_died() -> void:
@@ -13,4 +12,3 @@ func _on_player_died() -> void:
 	var end_screen_ui: EndScreenUI = self.end_screen_ui_scene.instantiate() as EndScreenUI
 	ui_layer.add_child(end_screen_ui)
 	end_screen_ui.set_defeat()
-

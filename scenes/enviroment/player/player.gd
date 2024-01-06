@@ -18,25 +18,24 @@ const DAMAGE_INTERVAL: float = 0.5
 var colliding_bodies_count: int = 0
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	self.hurtbox_area2d.body_entered.connect(_on_body_entered)
-	self.hurtbox_area2d.body_exited.connect(_on_body_exited)
-	self.damage_interval_timer.timeout.connect(_on_damage_interval_timer_timeout)
-	self.health_component.health_changed.connect(_on_health_changed)
-	GameEvents.ability_upgrade_added.connect(_on_ability_upgrade_added)
-	
+	self.hurtbox_area2d.body_entered.connect(self._on_body_entered)
+	self.hurtbox_area2d.body_exited.connect(self._on_body_exited)
+	self.damage_interval_timer.timeout.connect(self._on_damage_interval_timer_timeout)
+	self.health_component.health_changed.connect(self._on_health_changed)
+	GameEvents.ability_upgrade_added.connect(self._on_ability_upgrade_added)
+
 	self._update_health_progress_bar(self.health_component.health_percent())
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var movement_vector: Vector2 = self._get_direction()
 	var target_velocity: Vector2 = movement_vector * self.MAX_SPEED
 	self.velocity = self.velocity.lerp(
-		target_velocity, 1 - exp(-delta * self.ACCELERATION_SMOOTHING_FACTOR))
+		target_velocity, 1 - exp(-delta * self.ACCELERATION_SMOOTHING_FACTOR)
+	)
 	self.move_and_slide()
-	
+
 	if movement_vector.x != 0 || movement_vector.y != 0:
 		self.animation_player.play("walk")
 	else:
@@ -47,9 +46,12 @@ func _process(delta):
 
 
 func _get_direction() -> Vector2:
-	# right is X+ axis and down is Y+ axis
-	var x_movement: float = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	var y_movement: float = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+	var x_movement: float = (
+		Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	)
+	var y_movement: float = (
+		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+	)
 
 	return Vector2(x_movement, y_movement).normalized()
 
@@ -57,13 +59,14 @@ func _get_direction() -> Vector2:
 func _check_deal_damage() -> void:
 	if self.colliding_bodies_count == 0 || !self.damage_interval_timer.is_stopped():
 		return
-	
+
 	self.health_component.damage(1)
 	self.damage_interval_timer.start(self.DAMAGE_INTERVAL)
-	
+
 	if self.floating_text_scene != null:
 		var floating_text: FloatingText = FloatingText.spawn_floating_text_scene(
-			1, self.hurtbox_area2d, self.floating_text_scene)
+			1, self.hurtbox_area2d, self.floating_text_scene
+		)
 		floating_text.label.modulate = Color(1, 0, 0)
 
 
@@ -91,7 +94,6 @@ func _on_health_changed(health_percent_left: float) -> void:
 
 func _on_ability_upgrade_added(upgrade: AbilityUpgrade, _current_upgrades: Dictionary) -> void:
 	if not upgrade is AbilityUnlock:
-		return 
-	
-	self.ability_layer.add_child((upgrade as AbilityUnlock).ability_controller_scene.instantiate())
+		return
 
+	self.ability_layer.add_child((upgrade as AbilityUnlock).ability_controller_scene.instantiate())

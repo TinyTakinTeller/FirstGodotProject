@@ -5,11 +5,10 @@ class_name EndScreenUI
 @onready var description_label: Label = %DescriptionLabel
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	self.get_tree().paused = true
-	%RestartButton.pressed.connect(_on_restart_pressed)
-	%QuitButton.pressed.connect(_on_quit_pressed)
+	%RestartButton.pressed.connect(self._on_restart_pressed)
+	%QuitButton.pressed.connect(self._on_quit_pressed)
 
 
 func set_defeat() -> void:
@@ -29,4 +28,3 @@ func _on_restart_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	self.get_tree().quit()
-

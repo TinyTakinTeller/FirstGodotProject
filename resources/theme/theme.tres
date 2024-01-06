@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://dtryttgu7kj8c"]
 
-[ext_resource type="FontFile" uid="uid://dpisxmwvuk3cl" path="res://assets/theme/font/Rockboxcond12.ttf" id="1_ti4kr"]
+[ext_resource type="FontFile" uid="uid://dpisxmwvuk3cl" path="res://resources/theme/font/Rockboxcond12.ttf" id="1_ti4kr"]
 
 [resource]
 default_font = ExtResource("1_ti4kr")

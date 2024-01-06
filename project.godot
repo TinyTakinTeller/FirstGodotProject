@@ -32,9 +32,13 @@ window/stretch/mode="viewport"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/format_on_save/plugin.cfg")
+
 [gui]
 
-theme/custom="res://assets/theme/theme.tres"
+theme/custom="res://resources/theme/theme.tres"
 
 [input]
 

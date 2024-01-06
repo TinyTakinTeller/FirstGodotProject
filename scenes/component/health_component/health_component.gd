@@ -9,7 +9,6 @@ signal died
 var current_health: float
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	self.current_health = self.max_health
 
@@ -28,4 +27,3 @@ func _check_death() -> void:
 	if self.current_health == 0:
 		self.died.emit()
 		self.owner.queue_free()
-

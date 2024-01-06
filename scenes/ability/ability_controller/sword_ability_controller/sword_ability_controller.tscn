@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dllayro17g0qh"]
 
-[ext_resource type="Script" path="res://scenes/controller/sword_ability_controller/sword_ability_controller.gd" id="1_56dxx"]
+[ext_resource type="Script" path="res://scenes/ability/ability_controller/sword_ability_controller/sword_ability_controller.gd" id="1_56dxx"]
 
 [node name="SwordAbilityController" type="Node"]
 script = ExtResource("1_56dxx")
