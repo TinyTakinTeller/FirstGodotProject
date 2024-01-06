@@ -38,6 +38,7 @@ TLDR CONFIGURATION:
 - snap 2D Transforms to Pixels: (chapter 1: on -> chapter 2: off)
 - autoload configuration: game_events.tscn
 - project custom theme resource: theme.tres
+- configure and enable Format on Save plugin
 ```
 
 </details>
@@ -607,6 +608,11 @@ video 15. Adding Floating Damage Text
 FloatingText (node2d)
 HurtboxComponent > preload floating_text_scene // QUESTION: WHY NOT USE @export over preload ?
 BONUS: add FloatingText to player too (refactor spawning to static function)
+
+
+bewteen videos 15-16: refactor:
+
+> refactored packages and installed format_on_save addon (addons are git ignored)
 
 
 video 16. Implementing a Flash on Enemy Hit (hit flash shader, refactor packages)
