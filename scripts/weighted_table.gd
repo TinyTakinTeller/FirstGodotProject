@@ -1,7 +1,7 @@
 class_name WeightedTable
 
 var items: Array[Dictionary] = []
-var weight_sum = 0
+var weight_sum: int = 0
 
 
 func add_item(scene: PackedScene, weight: int) -> void:
@@ -16,7 +16,7 @@ func remove_item(scene: PackedScene, weight: int) -> void:
 
 func pick_item() -> PackedScene:
 	var chosen_weight = randi_range(1, self.weight_sum)
-	var iteration_sum = 0
+	var iteration_sum: int = 0
 	for item in self.items:
 		iteration_sum += item["weight"]
 		if chosen_weight <= iteration_sum:

@@ -11,7 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	var player = self.get_tree().get_first_node_in_group("player") as Node2D
+	var player: Node2D = self.get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
 		return
 	

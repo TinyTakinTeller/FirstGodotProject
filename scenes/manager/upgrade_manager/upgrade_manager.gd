@@ -7,7 +7,7 @@ const UPGRADE_OPTIONS: int = 2
 @export var experience_manager: ExperienceManager
 @export var upgrade_screen_ui_scene: PackedScene
 
-var current_upgrades = {}
+var current_upgrades: Dictionary = {}
 
 
 # Called when the node enters the scene tree for the first time.

@@ -36,7 +36,7 @@ func _spawn_enemy_instance(target: Node2D) -> void:
 	if enemy_scene == null:
 		return
 	
-	var entities_layer: Node2D = self.get_tree().get_first_node_in_group("entities_layer")
+	var entities_layer: Node2D = self.get_tree().get_first_node_in_group("entities_layer") as Node2D
 	SpawnerUtility.spawn_instance_bounded(enemy_scene, target, self.spawn_radius, entities_layer, 0)
 
 

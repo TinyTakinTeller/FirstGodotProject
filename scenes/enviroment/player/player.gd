@@ -4,21 +4,24 @@ const MAX_SPEED: float = 125
 const ACCELERATION_SMOOTHING_FACTOR: float = 25
 const DAMAGE_INTERVAL: float = 0.5
 
+@export var floating_text_scene: PackedScene
+
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var hurtbox_area2d: Area2D = $HurtboxArea2D
 @onready var damage_interval_timer: Timer = $DamageIntervalTimer
 @onready var sprite: Sprite2D = $Visual/Sprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var health_progress_bar: ProgressBar = $HealthProgressBar
 @onready var ability_layer: Node = $Ability
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var visual_layer: Node2D = $Visual
 
-var colliding_bodies_count = 0
+var colliding_bodies_count: int = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$HurtboxArea2D.body_entered.connect(_on_body_entered)
-	$HurtboxArea2D.body_exited.connect(_on_body_exited)
+	self.hurtbox_area2d.body_entered.connect(_on_body_entered)
+	self.hurtbox_area2d.body_exited.connect(_on_body_exited)
 	self.damage_interval_timer.timeout.connect(_on_damage_interval_timer_timeout)
 	self.health_component.health_changed.connect(_on_health_changed)
 	GameEvents.ability_upgrade_added.connect(_on_ability_upgrade_added)
@@ -57,6 +60,11 @@ func _check_deal_damage() -> void:
 	
 	self.health_component.damage(1)
 	self.damage_interval_timer.start(self.DAMAGE_INTERVAL)
+	
+	if self.floating_text_scene != null:
+		var floating_text: FloatingText = FloatingText.spawn_floating_text_scene(
+			1, self.hurtbox_area2d, self.floating_text_scene)
+		floating_text.label.modulate = Color(1, 0, 0)
 
 
 func _update_health_progress_bar(value: float):

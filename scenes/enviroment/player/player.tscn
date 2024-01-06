@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://7u5tog6k4j5t"]
+[gd_scene load_steps=15 format=3 uid="uid://7u5tog6k4j5t"]
 
 [ext_resource type="Script" path="res://scenes/enviroment/player/player.gd" id="1_hohw5"]
 [ext_resource type="Texture2D" uid="uid://j3cegi3cduwa" path="res://scenes/enviroment/player/player.png" id="1_ug2em"]
 [ext_resource type="PackedScene" uid="uid://dllayro17g0qh" path="res://scenes/controller/sword_ability_controller/sword_ability_controller.tscn" id="2_30pv4"]
 [ext_resource type="Script" path="res://scenes/component/health_component/health_component.gd" id="2_bro86"]
+[ext_resource type="PackedScene" uid="uid://cw7aupmlhq8xo" path="res://scenes/ui/floating_text/floating_text.tscn" id="2_wjher"]
 [ext_resource type="PackedScene" uid="uid://rd76pobs5q3e" path="res://scenes/ability/sword_ability/sword_ability.tscn" id="3_lkvm1"]
 
 [sub_resource type="Animation" id="Animation_hs1c8"]
@@ -116,6 +117,7 @@ border_color = Color(0.247059, 0.14902, 0.192157, 1)
 collision_layer = 0
 motion_mode = 1
 script = ExtResource("1_hohw5")
+floating_text_scene = ExtResource("2_wjher")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

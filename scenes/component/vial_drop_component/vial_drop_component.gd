@@ -25,6 +25,6 @@ func _on_died() -> void:
 
 
 func _drop_vial_instance() -> void:
-	var entities_layer: Node2D = self.get_tree().get_first_node_in_group("entities_layer")
+	var entities_layer: Node2D = self.get_tree().get_first_node_in_group("entities_layer") as Node2D
 	SpawnerUtility.spawn_instance(self.vial_scene, self.owner, self.spawn_radius, entities_layer)
 

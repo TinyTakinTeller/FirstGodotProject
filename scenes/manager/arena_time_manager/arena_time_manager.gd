@@ -9,7 +9,7 @@ const DIFFICULTY_INTERVAL: float = 5
 
 @onready var timer: Timer = $Timer
 
-var arena_difficulty = 0
+var arena_difficulty: int = 0
 
 
 # Called when the node enters the scene tree for the first time.

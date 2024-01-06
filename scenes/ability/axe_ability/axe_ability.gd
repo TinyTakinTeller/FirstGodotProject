@@ -16,13 +16,13 @@ func _ready():
 	self.base_rotation = Vector2.RIGHT.rotated(randf_range(0, TAU))
 	self.base_sign = 1 - 2 * randi_range(0, 1)
 	
-	var tween: Tween = create_tween()
+	var tween: Tween = self.create_tween()
 	tween.tween_method(self._tween_method, 0.0, self.MAX_ROTATIONS, self.ROTATION_DURATION)
 	tween.tween_callback(self.queue_free)
 
 
 func _tween_method(rotations: float) -> void:
-	var player: Node2D = self.get_tree().get_first_node_in_group("player")
+	var player: Node2D = self.get_tree().get_first_node_in_group("player") as Node2D
 	if player == null:
 		return
 	

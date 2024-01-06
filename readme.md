@@ -2,6 +2,9 @@
 
 First project to learn the Godot 4 Engine.
 
+List of features:
+
+*Comming Soon*
 
 
 
@@ -32,7 +35,8 @@ TLDR CONFIGURATION:
 - input map: arrow keys and w,a,s,d and left_click
 - viewport: 640 x 360, stretch mode: viewport, window override: 1920 x 1080
 - name 2D physic layers 1,2,3,4,5 (for Mask/Layer), e.g. Terrain, Player, Enemy, EnemyCollision, Pickup 
-- Snap 2D Transforms to Pixels: (chapter 1: on -> chapter 2: off)
+- snap 2D Transforms to Pixels: (chapter 1: on -> chapter 2: off)
+- project custom theme resource: theme.tres
 ```
 
 </details>
@@ -499,7 +503,7 @@ main.gd // %Player, connect died signal
 
 </details>
 
-Personal Notes for **Chapter 3** of the course are below. - *In Progress...*
+Personal Notes for **Chapter 3** of the course are below. - **Juicing up: animations, themes, particles... and more content.**
 
 <details>
 
@@ -594,12 +598,14 @@ TIP: free pixel fonts: https://nimblebeastscollective.itch.io/nb-pixel-font-bund
 DOUBLE CLICK .ttf file > Antialiasing: None, Hinting: None, Subpixel Positioning: Disabled // pixel art optimizations
 PROJECT > PROJECT SETTINGS... > Theme > Custom > theme.tres 
 theme.tres > scale 16 px
-ArenaTimeUI > Outline Size: 10, Font Outline Color: #3f2631
+ArenaTimeUI > Outline Size: 10, Font Outline Color: #3f2631 // TIP: Swatches - save color hex to palette
 
 
 video 15. Adding Floating Damage Text
 
-TBA
+FloatingText (node2d)
+HurtboxComponent > preload floating_text_scene // QUESTION: WHY NOT USE @export over preload ?
+BONUS: add FloatingText to player too (refactor spawning to static function)
 
 
 video 16. Implementing a Flash on Enemy Hit
