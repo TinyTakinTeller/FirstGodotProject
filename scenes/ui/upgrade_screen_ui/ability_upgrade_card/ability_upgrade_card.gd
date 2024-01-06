@@ -3,8 +3,8 @@ class_name AbilityUpgradeCard
 
 signal selected
 
-@onready var name_label: Label = $VBoxContainer/NameLabel
-@onready var description_label: Label = $VBoxContainer/DescriptionLabel
+@onready var name_label: Label = %NameLabel
+@onready var description_label: Label = %DescriptionLabel
 
 
 # Called when the node enters the scene tree for the first time.

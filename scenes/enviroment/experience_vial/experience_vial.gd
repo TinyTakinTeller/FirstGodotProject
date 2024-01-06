@@ -31,7 +31,7 @@ func _disable_collision() -> void:
 	self.collision_shape_2d.disabled = true
 
 
-func _on_area_entered(other_area: Area2D) -> void:
+func _on_area_entered(_other_area: Area2D) -> void:
 	Callable(self._disable_collision).call_deferred()
 	
 	var tween = self.create_tween()

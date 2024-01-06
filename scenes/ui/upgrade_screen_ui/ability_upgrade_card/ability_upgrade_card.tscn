@@ -9,12 +9,32 @@ script = ExtResource("1_qepy7")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="NameLabel" type="Label" parent="VBoxContainer"]
+[node name="NameLabelMarginContainer" type="MarginContainer" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="NameLabel" type="Label" parent="VBoxContainer/NameLabelMarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.247059, 0.14902, 0.192157, 1)
+theme_override_constants/outline_size = 10
 text = "Name"
 
-[node name="DescriptionLabel" type="Label" parent="VBoxContainer"]
+[node name="DescriptionLabelMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="DescriptionLabel" type="Label" parent="VBoxContainer/DescriptionLabelMarginContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(1, 1)
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.247059, 0.14902, 0.192157, 1)
+theme_override_constants/outline_size = 10
 text = "The ability card upgrade description."
 autowrap_mode = 2

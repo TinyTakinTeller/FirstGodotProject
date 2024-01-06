@@ -583,12 +583,18 @@ TIP: functions can be called as key frames
 
 video 13. Animating the Experience Vial Pickups
 
-TBA
+TIP: tween curves: https://easings.net/en
+TIP: backslash \ breaks lines into new lines
+TIP: up rotation is -90 deg (default is right at 0 deg)
 
 
 video 14. Adding a Custom Font
 
-TBA
+TIP: free pixel fonts: https://nimblebeastscollective.itch.io/nb-pixel-font-bundle
+DOUBLE CLICK .ttf file > Antialiasing: None, Hinting: None, Subpixel Positioning: Disabled // pixel art optimizations
+PROJECT > PROJECT SETTINGS... > Theme > Custom > theme.tres 
+theme.tres > scale 16 px
+ArenaTimeUI > Outline Size: 10, Font Outline Color: #3f2631
 
 
 video 15. Adding Floating Damage Text
