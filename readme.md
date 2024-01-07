@@ -631,12 +631,13 @@ TIP: ctrl + D to duplicate file
 
 video 18. Introduction to UI Theming
 
-TBA
+theme.tres > style PanelContainer > panel: StyleBoxTexture (ui.png)
 
 
 video 19. Finalizing Upgrade Card Theme
 
-TBA
+theme.tres > (custom) style AlternatePanelContainer > Base Type: PanelContainer > panel: StyleBoxTexture (ui.png)
+[Theme . Type Variation -> can now be used on PanelContainer node's]
 
 
 video 20. Animating the Upgrade Card

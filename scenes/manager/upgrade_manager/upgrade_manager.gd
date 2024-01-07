@@ -1,7 +1,7 @@
 extends Node
 class_name SwordAbilityController
 
-const UPGRADE_OPTIONS: int = 2
+const UPGRADE_OPTIONS: int = 3
 
 @export var experience_manager: ExperienceManager
 @export var upgrade_screen_ui_scene: PackedScene
