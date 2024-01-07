@@ -4,7 +4,7 @@ extends Node
 
 
 func _ready() -> void:
-	$Entities/Player.health_component.died.connect(self._on_player_died)
+	%Player.health_component.died.connect(self._on_player_died)
 
 
 func _on_player_died() -> void:

@@ -61,6 +61,7 @@ func _check_deal_damage() -> void:
 
 	self.health_component.damage(1)
 	self.damage_interval_timer.start(self.DAMAGE_INTERVAL)
+	GameEvents.player_damaged.emit()
 
 	if self.floating_text_scene != null:
 		var floating_text: FloatingText = FloatingText.spawn_floating_text_scene(
