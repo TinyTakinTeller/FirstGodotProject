@@ -8,7 +8,8 @@ const MIN_WAIT_TIME: float = 0.1
 
 @onready var timer: Timer = $Timer
 
-var damage: float = 1
+var base_damage: float = 1
+var extra_percent_damage: float = 0
 var base_wait_time: float = 1.5
 
 
@@ -41,7 +42,7 @@ func _spawn_sword_instance(target: Node2D) -> void:
 		as SwordAbility
 	)
 	instance.rotation = (target.global_position - instance.global_position).angle()
-	instance.hitbox_component.damage = self.damage
+	instance.hitbox_component.damage = self._get_damage()
 
 
 func _get_closest_enemy_in_radius(target: Node2D, radius: float) -> Node2D:
@@ -56,18 +57,23 @@ func _get_closest_enemy_in_radius(target: Node2D, radius: float) -> Node2D:
 	)
 	if enemies.size() == 0:
 		return null
-	
-	enemies.sort_custom(func(a: Node2D, b: Node2D) -> bool:
-		var distance_a: float = a.global_position.distance_squared_to(target.global_position) 
-		var distance_b: float = b.global_position.distance_squared_to(target.global_position)
-		return distance_a < distance_b
+
+	enemies.sort_custom(
+		func(a: Node2D, b: Node2D) -> bool: return (
+			a.global_position.distance_squared_to(target.global_position)
+			< b.global_position.distance_squared_to(target.global_position)
+		)
 	)
 	return enemies[0] as Node2D
 
 
 func _on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary) -> void:
-	if upgrade.id != "sword_rate":
-		return
+	if upgrade.id == "sword_rate":
+		var percent_reduction: float = current_upgrades[upgrade.id]["quantity"] * 0.1
+		self.timer.start(self.base_wait_time * max(1 - percent_reduction, self.MIN_WAIT_TIME))
+	elif upgrade.id == "sword_damage":
+		self.extra_percent_damage = current_upgrades[upgrade.id]["quantity"] * 0.2
 
-	var percent_reduction: float = current_upgrades["sword_rate"]["quantity"] * 0.1
-	self.timer.start(self.base_wait_time * max(1 - percent_reduction, self.MIN_WAIT_TIME))
+
+func _get_damage() -> float:
+	return self.base_damage * (1 + self.extra_percent_damage)

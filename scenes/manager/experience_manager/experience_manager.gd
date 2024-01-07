@@ -5,8 +5,8 @@ signal experience_updated(current_experience: float, target_experience: float)
 signal level_up(new_level: int)
 
 var current_experience: float = 0
-var target_experience: float = 5
-var experience_growth: float = 5
+var target_experience: float = 1
+var experience_growth: float = 1
 var current_level: int = 1
 
 

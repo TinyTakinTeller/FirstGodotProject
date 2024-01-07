@@ -626,7 +626,7 @@ TIP: QUESTION: shaders vs particle node ?
 
 video 17. Adding Ability Damage Upgrades
 
-TBA
+TIP: ctrl + D to duplicate file
 
 
 video 18. Introduction to UI Theming
@@ -706,6 +706,7 @@ Code style conventions:
 - Use statically typed variables and functions
 - Use `self` keyword to force syntax highlight on member variables and when calling member functions
 - Use "Format on Save" addon from AssetLib with: https://github.com/Scony/godot-gdscript-toolkit
+- Do not use multi-line lambda's, as it is not supported in the mentioned addon (workaround: use `;`)
 - Mostly follow: https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/gdscript_styleguide.html
 
 *Code Documentation Comming Soon*
