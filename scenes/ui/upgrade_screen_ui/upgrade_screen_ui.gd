@@ -19,6 +19,7 @@ func set_ability_upgrades(ability_upgrades: Array[AbilityUpgrade]) -> void:
 		var card_instance: AbilityUpgradeCard = self.card_scene.instantiate() as AbilityUpgradeCard
 		self.card_container.add_child(card_instance)
 		card_instance.set_ability_upgrade(upgrade)
+		card_instance.pivot_offset = card_instance.size / 2
 		card_instance.play_animation_in(delay)
 		card_instance.selected.connect(self._on_selected.bind(upgrade))
 		delay += card_instance.animation_player.get_animation("in").length / 2

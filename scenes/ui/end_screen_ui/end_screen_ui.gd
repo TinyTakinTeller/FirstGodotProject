@@ -3,9 +3,20 @@ class_name EndScreenUI
 
 @onready var title_label: Label = %TitleLabel
 @onready var description_label: Label = %DescriptionLabel
+@onready var panel_container: PanelContainer = %PanelContainer
 
 
 func _ready() -> void:
+	self.panel_container.pivot_offset = panel_container.size / 2
+	var tween: Tween = create_tween()
+	tween.tween_property(panel_container, "scale", Vector2.ZERO, 0)
+	(
+		tween
+		. tween_property(panel_container, "scale", Vector2.ONE, .3)
+		. set_ease(Tween.EASE_OUT)
+		. set_trans(Tween.TRANS_BACK)
+	)
+
 	self.get_tree().paused = true
 	%RestartButton.pressed.connect(self._on_restart_pressed)
 	%QuitButton.pressed.connect(self._on_quit_pressed)

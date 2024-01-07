@@ -652,17 +652,17 @@ video 21. Improving the Upgrade Selection Screen
 
 video 22. Applying a Style to the Experience Bar
 
-TBA
+TIP: use back and front arrow in Inspector
 
 
 video 23. Animating Victory and Defeat Screens
 
-TBA
+TIP: set pivot_offset to size / 2 to center the scale and rotation transformations
 
 
 video 24. Applying Styles to the Buttons
 
-TBA
+theme.tres
 
 
 video 25. Creating a Player Move Speed Upgrade
