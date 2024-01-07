@@ -642,12 +642,12 @@ theme.tres > (custom) style AlternatePanelContainer > Base Type: PanelContainer 
 
 video 20. Animating the Upgrade Card
 
-TBA
+// await keyword is used for async stuff
 
 
 video 21. Improving the Upgrade Selection Screen
 
-TBA
+// modulate property alpha channel is neat
 
 
 video 22. Applying a Style to the Experience Bar
