@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-const MAX_SPEED: float = 125
-const ACCELERATION_SMOOTHING_FACTOR: float = 25
 const DAMAGE_INTERVAL: float = 0.5
 
 @export var floating_text_scene: PackedScene
@@ -14,8 +12,10 @@ const DAMAGE_INTERVAL: float = 0.5
 @onready var health_progress_bar: ProgressBar = $HealthProgressBar
 @onready var ability_layer: Node = $Ability
 @onready var visual_layer: Node2D = $Visual
+@onready var velocity_component: VelocityComponent = $VelocityComponent
 
 var colliding_bodies_count: int = 0
+var base_speed: float = 100
 
 
 func _ready() -> void:
@@ -26,15 +26,14 @@ func _ready() -> void:
 	GameEvents.ability_upgrade_added.connect(self._on_ability_upgrade_added)
 
 	self._update_health_progress_bar(self.health_component.health_percent())
+	self.velocity_component.max_speed = self.base_speed
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var movement_vector: Vector2 = self._get_direction()
-	var target_velocity: Vector2 = movement_vector * self.MAX_SPEED
-	self.velocity = self.velocity.lerp(
-		target_velocity, 1 - exp(-delta * self.ACCELERATION_SMOOTHING_FACTOR)
-	)
-	self.move_and_slide()
+
+	self.velocity_component.accelerate_in_direction(movement_vector)
+	self.velocity_component.move()
 
 	if movement_vector.x != 0 || movement_vector.y != 0:
 		self.animation_player.play("walk")
@@ -92,7 +91,12 @@ func _on_health_changed(health_percent_left: float) -> void:
 	self._update_health_progress_bar(health_percent_left)
 
 
-func _on_ability_upgrade_added(upgrade: AbilityUpgrade, _current_upgrades: Dictionary) -> void:
+func _on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary) -> void:
+	if upgrade.id == "player_speed":
+		self.velocity_component.max_speed = (
+			self.base_speed * (1 + current_upgrades[upgrade.id]["quantity"] * 0.1)
+		)
+
 	if not upgrade is AbilityUnlock:
 		return
 

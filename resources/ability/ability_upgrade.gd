@@ -5,4 +5,4 @@ class_name AbilityUpgrade
 @export var name: String
 @export_multiline var description: String
 @export var max_quantity: int
-@export var weight: int = 1
+@export var weight: int = 10

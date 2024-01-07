@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7u5tog6k4j5t"]
+[gd_scene load_steps=16 format=3 uid="uid://7u5tog6k4j5t"]
 
 [ext_resource type="Script" path="res://scenes/enviroment/player/player.gd" id="1_hohw5"]
 [ext_resource type="Texture2D" uid="uid://j3cegi3cduwa" path="res://scenes/enviroment/player/player.png" id="1_ug2em"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/component/health_component/health_component.gd" id="2_bro86"]
 [ext_resource type="PackedScene" uid="uid://cw7aupmlhq8xo" path="res://scenes/ui/floating_text/floating_text.tscn" id="2_wjher"]
 [ext_resource type="PackedScene" uid="uid://rd76pobs5q3e" path="res://scenes/ability/sword_ability/sword_ability.tscn" id="3_lkvm1"]
+[ext_resource type="PackedScene" uid="uid://btsi3mxa1x8cj" path="res://scenes/component/velocity_component/velocity_component.tscn" id="4_0dbly"]
 
 [sub_resource type="Animation" id="Animation_hs1c8"]
 length = 0.001
@@ -127,6 +128,10 @@ libraries = {
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("2_bro86")
 max_health = 10.0
+
+[node name="VelocityComponent" parent="." instance=ExtResource("4_0dbly")]
+max_speed = 100
+acceleration = 25.0
 
 [node name="Ability" type="Node" parent="."]
 

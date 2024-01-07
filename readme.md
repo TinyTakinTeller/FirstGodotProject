@@ -667,7 +667,7 @@ theme.tres
 
 video 25. Creating a Player Move Speed Upgrade
 
-TBA
+TIP: drag & drop node from scene editor into .gd editor (hold CTRL before release) to create a @onready var line
 
 
 video 26. Adding a Vignette
