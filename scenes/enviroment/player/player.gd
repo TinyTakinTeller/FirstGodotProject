@@ -13,6 +13,7 @@ const DAMAGE_INTERVAL: float = 0.5
 @onready var ability_layer: Node = $Ability
 @onready var visual_layer: Node2D = $Visual
 @onready var velocity_component: VelocityComponent = $VelocityComponent
+@onready var random_audio_stream_player: AudioStreamPlayer2D = $RandomAudioStreamPlayer2DComponent
 
 var colliding_bodies_count: int = 0
 var base_speed: float = 100
@@ -62,6 +63,7 @@ func _check_deal_damage() -> void:
 	self.health_component.damage(1)
 	self.damage_interval_timer.start(self.DAMAGE_INTERVAL)
 	GameEvents.player_damaged.emit()
+	self.random_audio_stream_player.play_random()
 
 	if self.floating_text_scene != null:
 		var floating_text: FloatingText = FloatingText.spawn_floating_text_scene(

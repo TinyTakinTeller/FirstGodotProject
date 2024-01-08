@@ -679,7 +679,50 @@ TIP: godotshaders.com
 
 </details>
 
-Personal Notes for **Chapter 4** are TBA.
+Personal Notes for **Chapter 4** of the course are below. - **Sounds and Music.**
+
+<details>
+
+```
+
+video 1. Adding SFX - Part 1
+
+https://www.kenney.nl/assets/impact-sounds
+TIP: AudioStreamPlayer2D changes volume relative to distance (AudioStreamPlayer doesn't)
+. > Max distance: 300 px
+. > Attenuation: (TIP: right click to change curve)
+. > Bus: sfx > add new buses: sfx and music // TLDR chain of sound effects
+TIP: tool button in Inspector can copy properties from node to node
+
+
+video 2. Adding SFX - Part 2
+
+BONUS: free node on collect_experience sfx sound finished
+
+
+video 3. Adding SFX to UI Elements - Part 1
+
+TBA
+
+video 4. Adding SFX to UI Elements - Part 2
+
+TBA
+
+video 5. Adding Victory and Defeat Jingles
+
+TBA
+
+video 6. Adding Music
+
+TBA
+
+video 6.1 Hear What They Say
+
+TBA
+
+```
+
+</details>
 
 Personal Notes for **Chapter 5** are TBA.
 

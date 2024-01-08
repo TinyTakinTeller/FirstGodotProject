@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://5nvw1i856kr3"]
+[gd_scene load_steps=17 format=3 uid="uid://5nvw1i856kr3"]
 
 [ext_resource type="Script" path="res://scenes/enviroment/enemy/basic_enemy/basic_enemy.gd" id="1_qdj8a"]
 [ext_resource type="PackedScene" uid="uid://btsi3mxa1x8cj" path="res://scenes/component/velocity_component/velocity_component.tscn" id="2_yq3nt"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://doylycsw0cefh" path="res://scenes/enviroment/enemy/basic_enemy/basic_enemy.png" id="6_6vlqx"]
 [ext_resource type="Shader" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="6_knqs8"]
 [ext_resource type="PackedScene" uid="uid://bfr1vtlsrf5io" path="res://scenes/component/death_component/death_component.tscn" id="7_we7y4"]
+[ext_resource type="PackedScene" uid="uid://cyfbut3o62dax" path="res://scenes/component/random_audio_stream_player_2d_component/random_audio_stream_player_2d_component.tscn" id="10_d6avi"]
 
 [sub_resource type="Animation" id="Animation_s5cn4"]
 length = 0.001
@@ -136,3 +137,5 @@ sprite = NodePath("../Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_lmybg")
+
+[node name="RandomAudioStreamPlayer2DComponent" parent="." instance=ExtResource("10_d6avi")]

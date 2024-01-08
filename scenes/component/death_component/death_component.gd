@@ -4,6 +4,7 @@ extends Node2D
 @export var sprite: Sprite2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var random_audio_stream_player: AudioStreamPlayer2D = $RandomAudioStreamPlayer2DComponent
 
 
 func _ready() -> void:
@@ -23,3 +24,4 @@ func _on_died() -> void:
 
 	self.global_position = spawn_position
 	self.animation_player.play("default")
+	self.random_audio_stream_player.play_random()

@@ -3,12 +3,16 @@ extends CharacterBody2D
 @onready var sprite: Sprite2D = $Visual/Sprite2D
 @onready var visual_layer: Node2D = $Visual
 @onready var velocity_component: VelocityComponent = $VelocityComponent
+@onready var hurtbox_component: HurtboxComponent = $HurtboxComponent
+@onready var random_audio_stream_player: AudioStreamPlayer2D = $RandomAudioStreamPlayer2DComponent
+@onready var health_component: HealthComponent = $HealthComponent
 
 var is_moving: bool = true
 
 
 func _ready() -> void:
-	$HealthComponent.health_changed.connect(self._on_health_changed)
+	self.health_component.health_changed.connect(self._on_health_changed)
+	self.hurtbox_component.hurt.connect(self._on_hurt)
 
 
 func _process(_delta: float) -> void:
@@ -34,3 +38,7 @@ func _on_health_changed(health_percent_left: float) -> void:
 
 func set_is_moving(moving: bool) -> void:
 	self.is_moving = moving
+
+
+func _on_hurt() -> void:
+	self.random_audio_stream_player.play_random()

@@ -2,14 +2,20 @@ extends Node2D
 
 @onready var collision_shape_2d: CollisionShape2D = $Hitbox/CollisionShape2D
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var random_audio_stream_player: AudioStreamPlayer2D = $RandomAudioStreamPlayer2DComponent
 
 
 func _ready() -> void:
 	$Hitbox.area_entered.connect(self._on_area_entered)
+	self.random_audio_stream_player.finished.connect(self._on_audio_sfx_finished)
 
 
 func collect() -> void:
 	GameEvents.emit_experience_vial_collected(1)
+	self.random_audio_stream_player.play_random()
+
+
+func _on_audio_sfx_finished() -> void:
 	self.queue_free()
 
 

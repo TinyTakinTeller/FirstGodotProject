@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://7u5tog6k4j5t"]
+[gd_scene load_steps=22 format=3 uid="uid://7u5tog6k4j5t"]
 
 [ext_resource type="Script" path="res://scenes/enviroment/player/player.gd" id="1_hohw5"]
 [ext_resource type="Texture2D" uid="uid://j3cegi3cduwa" path="res://scenes/enviroment/player/player.png" id="1_ug2em"]
@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://cw7aupmlhq8xo" path="res://scenes/ui/floating_text/floating_text.tscn" id="2_wjher"]
 [ext_resource type="PackedScene" uid="uid://rd76pobs5q3e" path="res://scenes/ability/sword_ability/sword_ability.tscn" id="3_lkvm1"]
 [ext_resource type="PackedScene" uid="uid://btsi3mxa1x8cj" path="res://scenes/component/velocity_component/velocity_component.tscn" id="4_0dbly"]
+[ext_resource type="PackedScene" uid="uid://cyfbut3o62dax" path="res://scenes/component/random_audio_stream_player_2d_component/random_audio_stream_player_2d_component.tscn" id="8_q1k1e"]
+[ext_resource type="AudioStream" uid="uid://6jsgx41asgqi" path="res://assets/audio/hit_player/impactMining_000.ogg" id="9_d7hmj"]
+[ext_resource type="AudioStream" uid="uid://clj25f6021x1t" path="res://assets/audio/hit_player/impactMining_001.ogg" id="10_limhr"]
+[ext_resource type="AudioStream" uid="uid://b3o2tq8a25qih" path="res://assets/audio/hit_player/impactMining_002.ogg" id="11_mmnys"]
+[ext_resource type="AudioStream" uid="uid://bopbw722fhphf" path="res://assets/audio/hit_player/impactMining_003.ogg" id="12_7qs33"]
+[ext_resource type="AudioStream" uid="uid://4l36k08cavyu" path="res://assets/audio/hit_player/impactMining_004.ogg" id="13_u6jhc"]
 
 [sub_resource type="Animation" id="Animation_hs1c8"]
 length = 0.001
@@ -179,3 +185,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_ft07b")
 max_value = 1.0
 value = 0.5
 show_percentage = false
+
+[node name="RandomAudioStreamPlayer2DComponent" parent="." instance=ExtResource("8_q1k1e")]
+streams = Array[AudioStream]([ExtResource("9_d7hmj"), ExtResource("10_limhr"), ExtResource("11_mmnys"), ExtResource("12_7qs33"), ExtResource("13_u6jhc")])
