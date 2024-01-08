@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1h8eshclwrod"]
+
+[ext_resource type="AudioStream" uid="uid://cdwp08yhwpifd" path="res://assets/audio/music/6.1 Hear What They Say.mp3" id="1_208ky"]
+
+[node name="MusicAudioStreamPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_208ky")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"

@@ -67,12 +67,12 @@ script = ExtResource("1_538gb")
 
 [node name="VictoryAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_4j6y6")
-volume_db = -10.0
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="DefeatAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_dftmq")
-volume_db = -10.0
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

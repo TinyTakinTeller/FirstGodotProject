@@ -217,11 +217,9 @@ script = ExtResource("1_qepy7")
 
 [node name="HoverSfxComponent" parent="." instance=ExtResource("2_lc338")]
 volume_db = -10.0
-bus = &"SFX"
 streams = Array[AudioStream]([ExtResource("3_5y0rf"), ExtResource("4_u5ltk"), ExtResource("5_dydkl"), ExtResource("6_bgrxq"), ExtResource("7_qg4xo"), ExtResource("8_5ohmd"), ExtResource("9_g2rre"), ExtResource("10_kt4dn"), ExtResource("11_y3c3g"), ExtResource("12_w0vdj")])
 
 [node name="ClickSfxComponent" parent="." instance=ExtResource("2_lc338")]
-bus = &"SFX"
 streams = Array[AudioStream]([ExtResource("3_5y0rf"), ExtResource("4_u5ltk"), ExtResource("5_dydkl"), ExtResource("6_bgrxq"), ExtResource("7_qg4xo"), ExtResource("8_5ohmd"), ExtResource("9_g2rre"), ExtResource("10_kt4dn"), ExtResource("11_y3c3g"), ExtResource("12_w0vdj")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
