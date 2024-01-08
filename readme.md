@@ -702,23 +702,23 @@ BONUS: free node on collect_experience sfx sound finished
 
 video 3. Adding SFX to UI Elements - Part 1
 
-TBA
+BONUS: play_random_stream utils
+
 
 video 4. Adding SFX to UI Elements - Part 2
 
-TBA
+TIP: F6 Run Current Scene
+
 
 video 5. Adding Victory and Defeat Jingles
 
-TBA
+BONUS: don't use another function in end screen ui
+
 
 video 6. Adding Music
 
 TBA
 
-video 6.1 Hear What They Say
-
-TBA
 
 ```
 

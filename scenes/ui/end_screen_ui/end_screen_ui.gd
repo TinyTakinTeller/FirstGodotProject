@@ -4,6 +4,8 @@ class_name EndScreenUI
 @onready var title_label: Label = %TitleLabel
 @onready var description_label: Label = %DescriptionLabel
 @onready var panel_container: PanelContainer = %PanelContainer
+@onready var victory_audio_stream_player: AudioStreamPlayer = $VictoryAudioStreamPlayer
+@onready var defeat_audio_stream_player: AudioStreamPlayer = $DefeatAudioStreamPlayer
 
 
 func _ready() -> void:
@@ -25,11 +27,13 @@ func _ready() -> void:
 func set_defeat() -> void:
 	self.title_label.text = "Defeat"
 	self.description_label.text = "You Lost"
+	self.defeat_audio_stream_player.play()
 
 
 func set_victory() -> void:
 	self.title_label.text = "Victory"
 	self.description_label.text = "You Won"
+	self.victory_audio_stream_player.play()
 
 
 func _on_restart_pressed() -> void:

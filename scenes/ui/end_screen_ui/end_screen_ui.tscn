@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckk5cylg4huhx"]
+[gd_scene load_steps=9 format=3 uid="uid://ckk5cylg4huhx"]
 
 [ext_resource type="Script" path="res://scenes/ui/end_screen_ui/end_screen_ui.gd" id="1_538gb"]
+[ext_resource type="AudioStream" uid="uid://dx1k5kv1fdwcg" path="res://assets/audio/sfx/end_screen/jingles_HIT01.ogg" id="2_4j6y6"]
+[ext_resource type="PackedScene" uid="uid://cb4vhph63bk1" path="res://scenes/ui/sound_button/sound_button.tscn" id="2_77bki"]
+[ext_resource type="AudioStream" uid="uid://cwrfawk4gquii" path="res://assets/audio/sfx/end_screen/jingles_HIT15.ogg" id="3_dftmq"]
 
 [sub_resource type="Animation" id="Animation_momv2"]
 length = 0.001
@@ -61,6 +64,16 @@ _data = {
 [node name="EndScreenUI" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_538gb")
+
+[node name="VictoryAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4j6y6")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="DefeatAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dftmq")
+volume_db = -10.0
+bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -129,13 +142,13 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 4
 
-[node name="RestartButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="RestartButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_77bki")]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.14902, 0.168627, 0.266667, 1)
 text = "Restart"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="QuitButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_77bki")]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.14902, 0.168627, 0.266667, 1)
