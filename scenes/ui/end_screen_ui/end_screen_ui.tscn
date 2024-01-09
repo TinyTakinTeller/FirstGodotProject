@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/ui/end_screen_ui/end_screen_ui.gd" id="1_538gb"]
 [ext_resource type="AudioStream" uid="uid://dx1k5kv1fdwcg" path="res://assets/audio/sfx/end_screen/jingles_HIT01.ogg" id="2_4j6y6"]
-[ext_resource type="PackedScene" uid="uid://cb4vhph63bk1" path="res://scenes/ui/sound_button/sound_button.tscn" id="2_77bki"]
+[ext_resource type="PackedScene" uid="uid://cb4vhph63bk1" path="res://scenes/ui/ui_component/sound_button/sound_button.tscn" id="2_77bki"]
 [ext_resource type="AudioStream" uid="uid://cwrfawk4gquii" path="res://assets/audio/sfx/end_screen/jingles_HIT15.ogg" id="3_dftmq"]
 
 [sub_resource type="Animation" id="Animation_momv2"]
@@ -117,9 +117,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 1)
-theme_override_colors/font_outline_color = Color(0.14902, 0.168627, 0.266667, 1)
-theme_override_constants/outline_size = 8
+theme_type_variation = &"BlueOutlineLabel"
 theme_override_font_sizes/font_size = 32
 text = "Title"
 horizontal_alignment = 1
@@ -128,9 +126,7 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_shadow_color = Color(0.14902, 0.168627, 0.266667, 1)
-theme_override_colors/font_outline_color = Color(0.14902, 0.168627, 0.266667, 1)
-theme_override_constants/outline_size = 8
+theme_type_variation = &"BlueOutlineLabel"
 theme_override_font_sizes/font_size = 32
 text = "Description"
 horizontal_alignment = 1

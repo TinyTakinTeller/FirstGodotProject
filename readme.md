@@ -32,14 +32,15 @@ TLDR CONFIGURATION:
 - panels on left side; top:[FileSystem,History][Scene,Import], bot:[][Inspector,Node]
 - disable folding (on)
 - default texture filter: nearest
-- input map: arrow keys and w,a,s,d and left_click
+- input map: arrow keys and w,a,s,d and left_click and pause
 - viewport: 640 x 360, stretch mode: viewport, window override: 1920 x 1080
 - name 2D physic layers 1,2,3,4,5 (for Mask/Layer), e.g. Terrain, Player, Enemy, EnemyCollision, Pickup 
 - snap 2D Transforms to Pixels: (chapter 1: on -> chapter 2: off)
-- autoload configuration: game_events.tscn
+- autoload configuration: game_events.tscn, music player and transition effect manager
 - project custom theme resource: theme.tres
 - configure and enable Format on Save plugin
 - turn on Warn for Untyped Declaration in Debug
+- configure main menu scene as main scene (chapter 5)
 ```
 
 </details>
@@ -506,7 +507,7 @@ main.gd // %Player, connect died signal
 
 </details>
 
-Personal Notes for **Chapter 3** of the course are below. - **Juicing up: animations, themes, particles, content,...**
+Personal Notes for **Chapter 3** of the course are below. - **Juicing up: animations, themes, particles, content, ...**
 
 <details>
 
@@ -679,7 +680,7 @@ TIP: godotshaders.com
 
 </details>
 
-Personal Notes for **Chapter 4** of the course are below. - **Sounds and Music.**
+Personal Notes for **Chapter 4** of the course are below. - **Audio: SFX Sounds and Music.**
 
 <details>
 
@@ -724,11 +725,126 @@ https://freepd.com/
 
 </details>
 
-Personal Notes for **Chapter 5** are TBA.
+Personal Notes for **Chapter 5** of the course are below. - **Final Touches: Permanent Save File, Main Menu, ...**
 
-Personal Notes for **Chapter 6** are TBA.
+<details>
+
+```
+
+video 1. Creating a Main Menu
+
+Configure new main scene: main_menu_ui.tscn
+
+TIP: children of root node are autoload's (permanent) and main scene (swappable)
+
+
+video 2. Creating an Options Menu
+
+// no comment
+
+
+video 3. Styling the Options Menu Sliders
+
+TIP: don't forget to make unique a copy of a resource
+TIP: if slider styling disappears, add Content Margins
+TIP: add custom type with base type in theme.tres to overload some base type nodes
+TIP: change layer property to give higher render priority to bottom nodes in tree
+
+
+video 4. Creating a Pause Menu
+
+Configure new input action: "pause" (Esc)
+main.gd
+
+TIP: setting handled input stops input propagation through the tree
+
+
+video 5. Adding a Scene Transition Effect
+
+autoload scene transition scene
+BONUS: BUGFIX: remove skip_emit // it works fine without it, randomly stops working with it (there is no alternate bug on backawrd animation callback)
+BONUS: BUGFIX: vignette: clear damaged red screen animation on screen transition
+BONUS: BUGFIX: screen transition on back to main menu
+
+
+video _
+
+TBA
+
+
+video _
+
+TBA
+
+
+video _
+
+TBA
+
+
+video _
+
+TBA
+
+
+video _
+
+TBA
+
+
+video _
+
+TBA
+
+
+video _
+
+TBA
+
+
+video _
+
+TBA
+
+
+video _
+
+TBA
+
+
+```
+
+</details>
+
+Personal Notes for **Chapter 6** of the course are below. - **Pre-Release: more enemies, upgrades, balancing, ...**
+
+<details>
+
+```
+
+video _
+
+TBA
+
+
+```
+
+</details>
 
 Personal Notes for **Personal Extensions** are TBA.
+
+<details>
+
+```
+
+video _
+
+TBA
+
+
+```
+
+</details>
 
 
 Godot Engine QOL improvements wishlist is below.
@@ -736,8 +852,8 @@ Godot Engine QOL improvements wishlist is below.
 <details>
 
 ```
-- Member variable hightlight: https://github.com/godotengine/godot/pull/74393 (TODO: refactor the project to not use 'self' as a workaround for this.)
-- Mandatory export flag: https://github.com/godotengine/godot/pull/68420 (TODO: refactor this project to use this feature.)
+- Member variable hightlight: https://github.com/godotengine/godot/pull/74393
+- Mandatory export flag: https://github.com/godotengine/godot/pull/68420
 ```
 
 </details>

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://j3cegi3cduwa" path="res://scenes/enviroment/player/player.png" id="1_ug2em"]
 [ext_resource type="PackedScene" uid="uid://dllayro17g0qh" path="res://scenes/ability/ability_controller/sword_ability_controller/sword_ability_controller.tscn" id="2_30pv4"]
 [ext_resource type="Script" path="res://scenes/component/health_component/health_component.gd" id="2_bro86"]
-[ext_resource type="PackedScene" uid="uid://cw7aupmlhq8xo" path="res://scenes/ui/floating_text/floating_text.tscn" id="2_wjher"]
+[ext_resource type="PackedScene" uid="uid://cw7aupmlhq8xo" path="res://scenes/ui/ui_component/floating_text/floating_text.tscn" id="2_wjher"]
 [ext_resource type="PackedScene" uid="uid://rd76pobs5q3e" path="res://scenes/ability/sword_ability/sword_ability.tscn" id="3_lkvm1"]
 [ext_resource type="PackedScene" uid="uid://btsi3mxa1x8cj" path="res://scenes/component/velocity_component/velocity_component.tscn" id="4_0dbly"]
 [ext_resource type="PackedScene" uid="uid://cyfbut3o62dax" path="res://scenes/component/random_audio_stream_player_2d_component/random_audio_stream_player_2d_component.tscn" id="8_q1k1e"]
