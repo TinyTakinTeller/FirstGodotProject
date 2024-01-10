@@ -1,11 +1,10 @@
 extends Node
 class_name ArenaTimeManager
 
+signal victory
 signal arena_difficulty_increased(arena_difficulty: int)
 
 const DIFFICULTY_INTERVAL: float = 5
-
-@export var end_screen_ui_scene: PackedScene
 
 @onready var timer: Timer = $Timer
 
@@ -28,7 +27,4 @@ func get_time() -> float:
 
 
 func _on_timer_timeout() -> void:
-	var ui_layer: Node = self.get_tree().get_first_node_in_group("ui_layer")
-	var end_screen_ui: EndScreenUI = self.end_screen_ui_scene.instantiate() as EndScreenUI
-	ui_layer.add_child(end_screen_ui)
-	end_screen_ui.set_victory()
+	self.victory.emit()

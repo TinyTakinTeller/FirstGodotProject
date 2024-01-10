@@ -36,11 +36,12 @@ TLDR CONFIGURATION:
 - viewport: 640 x 360, stretch mode: viewport, window override: 1920 x 1080
 - name 2D physic layers 1,2,3,4,5 (for Mask/Layer), e.g. Terrain, Player, Enemy, EnemyCollision, Pickup 
 - snap 2D Transforms to Pixels: (chapter 1: on -> chapter 2: off)
-- autoload configuration: game_events.tscn, music player and transition effect manager
+- autoload configuration: game_events.tscn, music player, transition effect manager, meta progression
 - project custom theme resource: theme.tres
 - configure and enable Format on Save plugin
 - turn on Warn for Untyped Declaration in Debug
-- configure main menu scene as main scene (chapter 5)
+- configure main scene (chapter 1: main -> chapter 5: main menu)
+- configure custom user directory
 ```
 
 </details>
@@ -740,7 +741,7 @@ TIP: children of root node are autoload's (permanent) and main scene (swappable)
 
 video 2. Creating an Options Menu
 
-// no comment
+TIP: placeholder texture has default size 1x1 but can be set to 0x0
 
 
 video 3. Styling the Options Menu Sliders
@@ -767,14 +768,17 @@ BONUS: BUGFIX: vignette: clear damaged red screen animation on screen transition
 BONUS: BUGFIX: screen transition on back to main menu
 
 
-video _
+video 6. Creating a Meta Progression System
 
-TBA
+autoload MetaProgression
 
 
-video _
+video 7. Saving and Loading Meta Progression Data
 
-TBA
+configure custom user directory > Use Custom User Dir: On
+main.gd > save meta progression on player died and on victory
+BONUS: refactor victory screen instantiation to main.gd
+BONUS: print file open error
 
 
 video _
@@ -840,6 +844,8 @@ Personal Notes for **Personal Extensions** are TBA.
 video _
 
 TBA
+
+// permanent blood stains in the arena maybe? shader maybe baybe?
 
 
 ```

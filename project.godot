@@ -12,6 +12,8 @@ config_version=5
 
 config/name="First Game Project"
 run/main_scene="res://scenes/ui/main_menu_ui/main_menu_ui.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="TinyTakinTeller"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -24,6 +26,7 @@ buses/default_bus_layout="res://resources/audio/default_bus_layout.tres"
 GameEvents="*res://global/autoload/game_events/game_events.tscn"
 MusicPlayer="*res://global/autoload/music_player/music_audio_stream_player.tscn"
 ScreenTransition="*res://global/autoload/screen_transition/screen_transition.tscn"
+MetaProgression="*res://global/autoload/meta_progression/meta_progression.gd"
 
 [debug]
 
