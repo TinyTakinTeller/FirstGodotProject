@@ -9,6 +9,7 @@ var is_closing: bool
 
 func _ready() -> void:
 	get_tree().paused = true
+
 	self.panel_container.pivot_offset = self.panel_container.size / 2
 
 	%ResumeButton.pressed.connect(self._on_resume_pressed)
@@ -68,12 +69,11 @@ func _on_options_pressed() -> void:
 	)
 
 
-func _on_quit_pressed() -> void:
-	ScreenTransition.play_transition()
-	await ScreenTransition.transitioned_halfway
-	self.get_tree().paused = false
-	self.get_tree().change_scene_to_file("res://scenes/ui/main_menu_ui/main_menu_ui.tscn")
-
-
 func _on_options_back_pressed(options_menu: OptionsMenuUI) -> void:
 	options_menu.queue_free()
+
+
+func _on_quit_pressed() -> void:
+	ScreenTransition.transition_to_scene_and_unpause(
+		"res://scenes/ui/main_menu_ui/main_menu_ui.tscn"
+	)

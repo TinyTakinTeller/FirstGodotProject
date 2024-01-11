@@ -9,6 +9,8 @@ class_name EndScreenUI
 
 
 func _ready() -> void:
+	self.get_tree().paused = true
+
 	self.panel_container.pivot_offset = panel_container.size / 2
 	var tween: Tween = create_tween()
 	tween.tween_property(panel_container, "scale", Vector2.ZERO, 0)
@@ -19,9 +21,8 @@ func _ready() -> void:
 		. set_trans(Tween.TRANS_BACK)
 	)
 
-	self.get_tree().paused = true
-	%RestartButton.pressed.connect(self._on_restart_pressed)
-	%QuitButton.pressed.connect(self._on_quit_pressed)
+	%ContinueButton.pressed.connect(self._on_continue_button_pressed)
+	%QuitButton.pressed.connect(self._on_quit_button_pressed)
 
 
 func set_defeat() -> void:
@@ -36,10 +37,13 @@ func set_victory() -> void:
 	self.victory_audio_stream_player.play()
 
 
-func _on_restart_pressed() -> void:
-	self.get_tree().paused = false
-	self.get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+func _on_continue_button_pressed() -> void:
+	ScreenTransition.transition_to_scene_and_unpause(
+		"res://scenes/ui/meta_menu_ui/meta_menu_ui.tscn"
+	)
 
 
-func _on_quit_pressed() -> void:
-	self.get_tree().quit()
+func _on_quit_button_pressed() -> void:
+	ScreenTransition.transition_to_scene_and_unpause(
+		"res://scenes/ui/main_menu_ui/main_menu_ui.tscn"
+	)

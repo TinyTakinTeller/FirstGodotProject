@@ -11,15 +11,11 @@ func _ready() -> void:
 
 
 func _on_play_pressed() -> void:
-	ScreenTransition.play_transition()
-	await ScreenTransition.transitioned_halfway
-	self.get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+	ScreenTransition.transition_to_scene("res://scenes/main/main.tscn")
 
 
 func _on_upgrades_pressed() -> void:
-	ScreenTransition.play_transition()
-	await ScreenTransition.transitioned_halfway
-	self.get_tree().change_scene_to_file("res://scenes/ui/main_menu_ui/main_menu_ui.tscn")
+	ScreenTransition.transition_to_scene("res://scenes/ui/meta_menu_ui/meta_menu_ui.tscn")
 
 
 func _on_options_pressed() -> void:

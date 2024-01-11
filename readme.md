@@ -781,37 +781,44 @@ BONUS: refactor victory screen instantiation to main.gd
 BONUS: print file open error
 
 
-video _
+video 8. Creating the Meta Upgrade Card
+
+meta_upgrade_card.tscn
+TIP: use Ctrl + D in FileSystem panel to duplicate scene
+TIP: don't over component-ize the UI
+
+
+video 9. Allowing Player to Purchase Meta Upgrades
+
+meta_menu.tscn
+
+
+video 10. Improving the Meta Upgrade Card
+
+TIP: don't abuse groups i.e. get_tree().call_group(), use proper patterns i.e. signals
+BONUS: refactor base buttons to the sound_button
+BONUS: add top margin to NameLabel
+
+
+video 11. Adding a ScrollContainer to the Meta Upgrade Screen
+
+TIP: some nodes are inheriting styling or hiding sub-nodes, e.g. ScrollContainer hides VScrollBar
+TIP: can copy similar node's properties, e.g. HSlider to VScrollBar
+BONUS: TIP: right click on signal in Node panel to connect it (without needing to write a connect function in _ready)
+BONUS: refactor to transition_to_scene_and_unpause
+
+
+video 12. Exporting the Game for Publishing
 
 TBA
 
 
-video _
+video 13. Fixing an Enemy Spawning Bug
 
 TBA
 
 
-video _
-
-TBA
-
-
-video _
-
-TBA
-
-
-video _
-
-TBA
-
-
-video _
-
-TBA
-
-
-video _
+video 14. Conclusion
 
 TBA
 

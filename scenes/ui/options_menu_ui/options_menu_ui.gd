@@ -3,10 +3,10 @@ class_name OptionsMenuUI
 
 signal back_pressed
 
-@onready var window_button: Button = $%WindowButton
+@onready var window_button: Button = %WindowButton
 @onready var sfx_slider: HSlider = %SfxSlider
 @onready var music_slider: HSlider = %MusicSlider
-@onready var back_button: Button = $%BackButton
+@onready var back_button: Button = %BackButton
 
 
 func _ready() -> void:
