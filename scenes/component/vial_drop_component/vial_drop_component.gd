@@ -4,7 +4,7 @@ extends Node
 @export var health_component: HealthComponent
 @export var spawn_radius: float = 1
 
-var base_drop_percent: float = 1
+var base_drop_percent: float = 0.5
 
 
 func _ready() -> void:

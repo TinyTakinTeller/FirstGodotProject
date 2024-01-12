@@ -4,10 +4,13 @@ extends CanvasLayer
 
 
 func _ready() -> void:
+	if OS.get_name() == "Web":
+		%QuitButton.queue_free()
+	else:
+		%QuitButton.pressed.connect(self._on_quit_pressed)
 	%PlayButton.pressed.connect(self._on_play_pressed)
 	%UpgradesButton.pressed.connect(self._on_upgrades_pressed)
 	%OptionsButton.pressed.connect(self._on_options_pressed)
-	%QuitButton.pressed.connect(self._on_quit_pressed)
 
 
 func _on_play_pressed() -> void:

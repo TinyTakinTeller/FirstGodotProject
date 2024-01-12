@@ -42,6 +42,9 @@ TLDR CONFIGURATION:
 - turn on Warn for Untyped Declaration in Debug
 - configure main scene (chapter 1: main -> chapter 5: main menu)
 - configure custom user directory
+- configure icon .png and windows native icon .ico, bootsplash background and icon, display mode (release and debug flag)
+- configure windows build and web build profiles, configure rcedit for windows icon
+- configure Verbose stdout: On
 ```
 
 </details>
@@ -810,17 +813,33 @@ BONUS: refactor to transition_to_scene_and_unpause
 
 video 12. Exporting the Game for Publishing
 
-TBA
+> configure icon .png and windows native icon .ico
+> configure bootsplash background and icon > uncheck fullsize, uncheck filter
+> configure display window mode: fullscreen
+TIP: click (All) and add mode.debug flag with default display window mode: windowed
+
+> configure rcedit (Editor > Editor Settings)
+
+Project > Export > Windows Desktop
+. > Icon: icon.ico
+. > Icon Interploation: nearest neighbor
+. > Company Name: ...
+. > Export Path: ...
+.. > Export Project > Export With Debug: false
+.. > configure web build profile >> run game in browser (godot built-in local server)
 
 
 video 13. Fixing an Enemy Spawning Bug
 
-TBA
+TIP: add offser when raycasting to account for entity hitbox size
 
 
 video 14. Conclusion
 
-TBA
+BONUS: add OS conditional to remove quit button on web build
+BONUS: configure Verbose stdout: On
+
+TODO: shader lag spike workaround: https://github.com/godotengine/godot/issues/86913#issuecomment-1882189914
 
 
 ```
@@ -867,6 +886,7 @@ Godot Engine QOL improvements wishlist is below.
 ```
 - Member variable hightlight: https://github.com/godotengine/godot/pull/74393
 - Mandatory export flag: https://github.com/godotengine/godot/pull/68420
+- Shader Lag Spike Workaround: https://github.com/godotengine/godot/issues/86913#issuecomment-1882189914
 ```
 
 </details>
