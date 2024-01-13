@@ -11,6 +11,7 @@ var axe_damage_upgrade: AbilityUpgrade = preload("res://resources/ability/axe_da
 var sword_damage_upgrade: AbilityUpgrade = preload("res://resources/ability/sword_damage.tres")
 var sword_rate_upgrade: AbilityUpgrade = preload("res://resources/ability/sword_rate.tres")
 var player_speed_upgrade: AbilityUpgrade = preload("res://resources/ability/player_speed.tres")
+var anvil_unlock_upgrade: AbilityUpgrade = preload("res://resources/ability/anvil_unlock.tres")
 
 var upgrade_pool: AbilityUpgradeTable = AbilityUpgradeTable.new()
 var current_upgrades: Dictionary = {}
@@ -23,6 +24,7 @@ func _ready() -> void:
 	self.upgrade_pool.add_item(self.sword_damage_upgrade)
 	self.upgrade_pool.add_item(self.sword_rate_upgrade)
 	self.upgrade_pool.add_item(self.player_speed_upgrade)
+	self.upgrade_pool.add_item(self.anvil_unlock_upgrade)
 
 
 func _on_level_up(_new_level: int) -> void:

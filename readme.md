@@ -853,8 +853,20 @@ Personal Notes for **Chapter 6** of the course are below. - **Pre-Release: more 
 ```
 
 video 1. Adding Another Enemy Type
+
+TODO: refactor enemies to be easier to configure and add ?
+
+
 video 2. Creating an Anvil Ability
+
+TODO: refactor abilities and controllers to be easier to configure and add ?
+
+
 video 3. Adding a Health Regeneration Meta Upgrade
+
+TBA
+
+
 video 4. Adding an Anvil Ability Upgrade
 video 5. Fixing UI Sizing and Increasing Enemy Count
 video 6. Adding Anvil Impact Particles

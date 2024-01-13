@@ -6,7 +6,6 @@ signal transitioned_halfway
 
 
 func play_transition() -> void:
-	print("pipi")
 	self.animation_player.play("default")
 	await self.transitioned_halfway
 	self.animation_player.play_backwards("default")
