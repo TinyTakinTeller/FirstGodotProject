@@ -8,7 +8,7 @@
 [ext_resource type="Shader" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="6_snwd1"]
 [ext_resource type="PackedScene" uid="uid://bfr1vtlsrf5io" path="res://scenes/component/death_component/death_component.tscn" id="7_7t1gg"]
 [ext_resource type="PackedScene" uid="uid://cyfbut3o62dax" path="res://scenes/component/random_audio_stream_player_2d_component/random_audio_stream_player_2d_component.tscn" id="8_dc8ri"]
-[ext_resource type="Texture2D" uid="uid://bok1p7jvoghmr" path="res://scenes/enviroment/enemy/bat_enemy/bat.png" id="9_x76vo"]
+[ext_resource type="Texture2D" uid="uid://bok1p7jvoghmr" path="res://assets/image/enviroment/enemy/bat.png" id="9_x76vo"]
 [ext_resource type="PackedScene" uid="uid://dp8chvm4dwqrw" path="res://scenes/component/hurtbox_component/hurtbox_component.tscn" id="10_v41hw"]
 
 [sub_resource type="Animation" id="Animation_7vmvs"]
@@ -165,13 +165,14 @@ position = Vector2(0, -7)
 texture = ExtResource("9_x76vo")
 
 [node name="DeathComponent" parent="Visual" node_paths=PackedStringArray("health_component", "sprite") instance=ExtResource("7_7t1gg")]
+position = Vector2(0, -7)
 health_component = NodePath("../../HealthComponent")
 sprite = NodePath("../Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -4)
+position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_mbwdq")
 
 [node name="RandomAudioStreamPlayer2DComponent" parent="." instance=ExtResource("8_dc8ri")]
+position = Vector2(0, -7)
 streams = Array[AudioStream]([SubResource("AudioStreamOggVorbis_0rhdk"), SubResource("AudioStreamOggVorbis_rnj72"), SubResource("AudioStreamOggVorbis_dkrb4"), SubResource("AudioStreamOggVorbis_v4xye"), SubResource("AudioStreamOggVorbis_02uxc")])

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dt81wfrlba8nc" path="res://scenes/component/vial_drop_component/vial_drop_component.tscn" id="4_bckhg"]
 [ext_resource type="PackedScene" uid="uid://61puemsopib6" path="res://scenes/component/hit_flash_component/hit_flash_component.tscn" id="5_lcrps"]
 [ext_resource type="PackedScene" uid="uid://dp8chvm4dwqrw" path="res://scenes/component/hurtbox_component/hurtbox_component.tscn" id="5_oopxp"]
-[ext_resource type="Texture2D" uid="uid://doylycsw0cefh" path="res://scenes/enviroment/enemy/basic_enemy/basic_enemy.png" id="6_6vlqx"]
+[ext_resource type="Texture2D" uid="uid://doylycsw0cefh" path="res://assets/image/enviroment/enemy/basic_enemy.png" id="6_6vlqx"]
 [ext_resource type="Shader" path="res://scenes/component/hit_flash_component/hit_flash_component.gdshader" id="6_knqs8"]
 [ext_resource type="PackedScene" uid="uid://bfr1vtlsrf5io" path="res://scenes/component/death_component/death_component.tscn" id="7_we7y4"]
 [ext_resource type="PackedScene" uid="uid://cyfbut3o62dax" path="res://scenes/component/random_audio_stream_player_2d_component/random_audio_stream_player_2d_component.tscn" id="10_d6avi"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://global/autoload/screen_transition/screen_transition.gd" id="1_k4sn2"]
 [ext_resource type="Shader" path="res://global/autoload/screen_transition/screen_transition.gdshader" id="1_kojj2"]
-[ext_resource type="Texture2D" uid="uid://cj4dlnn40i2th" path="res://global/autoload/screen_transition/5.1 screen_transition.png" id="2_cqjc4"]
+[ext_resource type="Texture2D" uid="uid://cj4dlnn40i2th" path="res://assets/image/ui/5.1 screen_transition.png" id="2_cqjc4"]
 
 [sub_resource type="Animation" id="Animation_4ilo4"]
 length = 0.001

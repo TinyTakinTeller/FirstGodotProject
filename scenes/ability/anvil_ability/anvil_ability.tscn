@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://brnuwdpb6ttir"]
 
-[ext_resource type="Texture2D" uid="uid://beubm4rc7htu6" path="res://scenes/ability/anvil_ability/anvil.png" id="1_8yxex"]
+[ext_resource type="Texture2D" uid="uid://beubm4rc7htu6" path="res://assets/image/ability/anvil.png" id="1_8yxex"]
 [ext_resource type="Script" path="res://scenes/ability/anvil_ability/anvil_ability.gd" id="1_gfrbk"]
 [ext_resource type="PackedScene" uid="uid://bpb175pjeuy28" path="res://scenes/component/hitbox_component/hitbox_component.tscn" id="3_3gdrf"]
-[ext_resource type="Texture2D" uid="uid://cmaoybd2mhujh" path="res://scenes/ability/anvil_ability/particle.png" id="4_mejla"]
+[ext_resource type="Texture2D" uid="uid://cmaoybd2mhujh" path="res://assets/image/ability/particle.png" id="4_mejla"]
 
 [sub_resource type="Animation" id="Animation_pj45e"]
 length = 0.001

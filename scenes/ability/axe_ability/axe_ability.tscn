@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dsk2buswilyqf"]
 
 [ext_resource type="Script" path="res://scenes/ability/axe_ability/axe_ability.gd" id="1_6kqlt"]
-[ext_resource type="Texture2D" uid="uid://bprqql3lmgeo" path="res://scenes/ability/axe_ability/tile_0118.png" id="1_p1e0q"]
+[ext_resource type="Texture2D" uid="uid://bprqql3lmgeo" path="res://assets/image/ability/tile_0118.png" id="1_p1e0q"]
 [ext_resource type="Script" path="res://scenes/component/hitbox_component/hitbox_component.gd" id="2_d6ok7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_20l1h"]

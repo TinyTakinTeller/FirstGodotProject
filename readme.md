@@ -887,11 +887,17 @@ Personal Notes for **Personal Extensions** are TBA.
 
 ```
 
-video _
+Extensions I.
 
-TBA
+refactor file structure: move files to assets
 
-// permanent blood stains in the arena maybe? shader maybe baybe?
+TIP: export configuration paths will NOT be updated, need to re-set manually (e.g. windows native icon)
+
+
+Extension II.
+
+COMMING SOON
+
 
 
 ```

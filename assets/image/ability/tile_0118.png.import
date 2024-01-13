@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bok1p7jvoghmr"
-path="res://.godot/imported/bat.png-5a9382f5c91a22e30af821733af05c09.ctex"
+uid="uid://bprqql3lmgeo"
+path="res://.godot/imported/tile_0118.png-919ad4308bc6156f2aa800592d9c8506.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/enviroment/enemy/bat_enemy/bat.png"
-dest_files=["res://.godot/imported/bat.png-5a9382f5c91a22e30af821733af05c09.ctex"]
+source_file="res://assets/image/ability/tile_0118.png"
+dest_files=["res://.godot/imported/tile_0118.png-919ad4308bc6156f2aa800592d9c8506.ctex"]
 
 [params]
 

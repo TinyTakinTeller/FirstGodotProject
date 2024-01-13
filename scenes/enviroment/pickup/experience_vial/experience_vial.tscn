@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://d10lgc6t8qgxl"]
 
-[ext_resource type="Texture2D" uid="uid://borhelnimn1jr" path="res://scenes/enviroment/experience_vial/tile_0126.png" id="1_ty16g"]
-[ext_resource type="Script" path="res://scenes/enviroment/experience_vial/experience_vial.gd" id="1_y2t24"]
+[ext_resource type="Texture2D" uid="uid://borhelnimn1jr" path="res://assets/image/enviroment/pickup/tile_0126.png" id="1_ty16g"]
+[ext_resource type="Script" path="res://scenes/enviroment/pickup/experience_vial/experience_vial.gd" id="1_y2t24"]
 [ext_resource type="PackedScene" uid="uid://cyfbut3o62dax" path="res://scenes/component/random_audio_stream_player_2d_component/random_audio_stream_player_2d_component.tscn" id="3_d1i86"]
 [ext_resource type="AudioStream" uid="uid://ck48l53oa5b7y" path="res://assets/audio/sfx/collect_experience/impactGeneric_light_000.ogg" id="4_en46l"]
 [ext_resource type="AudioStream" uid="uid://bt7ghpodbnb0m" path="res://assets/audio/sfx/collect_experience/impactGeneric_light_001.ogg" id="5_8xisy"]

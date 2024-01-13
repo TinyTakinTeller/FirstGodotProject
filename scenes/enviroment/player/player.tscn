@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://7u5tog6k4j5t"]
 
 [ext_resource type="Script" path="res://scenes/enviroment/player/player.gd" id="1_hohw5"]
-[ext_resource type="Texture2D" uid="uid://j3cegi3cduwa" path="res://scenes/enviroment/player/player.png" id="1_ug2em"]
+[ext_resource type="Texture2D" uid="uid://j3cegi3cduwa" path="res://assets/image/enviroment/player/player.png" id="1_ug2em"]
 [ext_resource type="PackedScene" uid="uid://dllayro17g0qh" path="res://scenes/ability/ability_controller/sword_ability_controller/sword_ability_controller.tscn" id="2_30pv4"]
 [ext_resource type="Script" path="res://scenes/component/health_component/health_component.gd" id="2_bro86"]
 [ext_resource type="PackedScene" uid="uid://cw7aupmlhq8xo" path="res://scenes/ui/ui_component/floating_text/floating_text.tscn" id="2_wjher"]

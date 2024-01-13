@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=21 format=3 uid="uid://dtryttgu7kj8c"]
 
-[ext_resource type="Texture2D" uid="uid://btsyf4fhdlh7v" path="res://resources/theme/ui/ui.png" id="1_b2lhm"]
-[ext_resource type="FontFile" uid="uid://dpisxmwvuk3cl" path="res://resources/theme/font/Rockboxcond12.ttf" id="1_ti4kr"]
+[ext_resource type="Texture2D" uid="uid://btsyf4fhdlh7v" path="res://assets/image/ui/ui.png" id="1_b2lhm"]
+[ext_resource type="FontFile" uid="uid://dpisxmwvuk3cl" path="res://assets/font/Rockboxcond12.ttf" id="1_ti4kr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkhm3"]
 bg_color = Color(0.752941, 0.796078, 0.862745, 1)

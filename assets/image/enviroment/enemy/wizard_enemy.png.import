@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmaoybd2mhujh"
-path="res://.godot/imported/particle.png-747aa92f092ebf09b4455eda6ae96006.ctex"
+uid="uid://ddnj4j8l4cpe"
+path="res://.godot/imported/wizard_enemy.png-2fbd64e5de6eede0bb2a1d3530f84ddb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/ability/anvil_ability/particle.png"
-dest_files=["res://.godot/imported/particle.png-747aa92f092ebf09b4455eda6ae96006.ctex"]
+source_file="res://assets/image/enviroment/enemy/wizard_enemy.png"
+dest_files=["res://.godot/imported/wizard_enemy.png-2fbd64e5de6eede0bb2a1d3530f84ddb.ctex"]
 
 [params]
 

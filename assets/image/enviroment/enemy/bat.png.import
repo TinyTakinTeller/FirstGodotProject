@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beubm4rc7htu6"
-path="res://.godot/imported/anvil.png-d358bb9d42bafbfc05dc4f484bde3e71.ctex"
+uid="uid://bok1p7jvoghmr"
+path="res://.godot/imported/bat.png-d2b754d1986a8955c033515535c0c67b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/ability/anvil_ability/anvil.png"
-dest_files=["res://.godot/imported/anvil.png-d358bb9d42bafbfc05dc4f484bde3e71.ctex"]
+source_file="res://assets/image/enviroment/enemy/bat.png"
+dest_files=["res://.godot/imported/bat.png-d2b754d1986a8955c033515535c0c67b.ctex"]
 
 [params]
 

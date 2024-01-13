@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://rd76pobs5q3e"]
 
-[ext_resource type="Texture2D" uid="uid://dyg87i2ku8ptg" path="res://scenes/ability/sword_ability/tile_0104.png" id="1_06fxa"]
+[ext_resource type="Texture2D" uid="uid://dyg87i2ku8ptg" path="res://assets/image/ability/tile_0104.png" id="1_06fxa"]
 [ext_resource type="PackedScene" uid="uid://bpb175pjeuy28" path="res://scenes/component/hitbox_component/hitbox_component.tscn" id="1_8a4jp"]
 [ext_resource type="Script" path="res://scenes/ability/sword_ability/sword_ability.gd" id="1_kmvkm"]
 
