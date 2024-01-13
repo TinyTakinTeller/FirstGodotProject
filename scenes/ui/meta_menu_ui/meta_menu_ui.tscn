@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciugpqcgws76"]
+[gd_scene load_steps=8 format=3 uid="uid://ciugpqcgws76"]
 
 [ext_resource type="Script" path="res://scenes/ui/meta_menu_ui/meta_menu_ui.gd" id="1_vgf15"]
 [ext_resource type="PackedScene" uid="uid://7bfum25cft7c" path="res://scenes/ui/meta_menu_ui/meta_upgrade_card/meta_upgrade_card.tscn" id="2_88b47"]
 [ext_resource type="Resource" uid="uid://0m6dj8yspyom" path="res://resources/meta/experience_gain.tres" id="3_smfih"]
+[ext_resource type="Resource" uid="uid://cpou7go0alh1x" path="res://resources/meta/health_regeneration.tres" id="4_1w7of"]
 [ext_resource type="TileSet" uid="uid://dvbs3ye5sj3wq" path="res://resources/tileset/tileset.tres" id="4_nrtge"]
 [ext_resource type="PackedScene" uid="uid://cb4vhph63bk1" path="res://scenes/ui/ui_component/sound_button/sound_button.tscn" id="5_kutap"]
 [ext_resource type="PackedScene" uid="uid://dmyeg6ldx2orv" path="res://scenes/ui/ui_component/vignette/vignette.tscn" id="6_v2cjf"]
@@ -11,7 +12,7 @@
 layer = 2
 script = ExtResource("1_vgf15")
 meta_upgrade_card_scene = ExtResource("2_88b47")
-upgrades = Array[Resource("res://resources/meta/meta_upgrade.gd")]([ExtResource("3_smfih")])
+upgrades = Array[Resource("res://resources/meta/meta_upgrade.gd")]([ExtResource("3_smfih"), ExtResource("4_1w7of")])
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("4_nrtge")

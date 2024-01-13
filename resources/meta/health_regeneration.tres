@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MetaUpgrade" load_steps=2 format=3 uid="uid://cpou7go0alh1x"]
+
+[ext_resource type="Script" path="res://resources/meta/meta_upgrade.gd" id="1_uk2go"]
+
+[resource]
+script = ExtResource("1_uk2go")
+id = "health_regeneration"
+max_quantity = 3
+experience_cost = 100
+title = "Health Regeneration"
+description = "Regenerate 1 health every 30 seconds."

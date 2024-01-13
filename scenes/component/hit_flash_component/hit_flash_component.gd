@@ -12,7 +12,10 @@ func _ready() -> void:
 	self.sprite.material = self.hit_flash_material
 
 
-func _on_health_changed(_health_percent: float) -> void:
+func _on_health_changed(amount: float, _health_percent: float) -> void:
+	if amount >= 0:
+		return
+
 	if self.hit_flash_tween != null && self.hit_flash_tween.is_valid():
 		self.hit_flash_tween.kill()
 

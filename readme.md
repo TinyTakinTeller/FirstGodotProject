@@ -864,7 +864,7 @@ TODO: refactor abilities and controllers to be easier to configure and add ?
 
 video 3. Adding a Health Regeneration Meta Upgrade
 
-TBA
+TODO: refactor meta menu to preload meta upgrades ? (Like ability upgrades...)
 
 
 video 4. Adding an Anvil Ability Upgrade

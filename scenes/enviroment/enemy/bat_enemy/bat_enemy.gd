@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 		self.visual_layer.scale = Vector2(-sign_x, 1)
 
 
-func _on_health_changed(health_percent_left: float) -> void:
+func _on_health_changed(_amount: float, health_percent_left: float) -> void:
 	self.sprite.modulate = Color(1, health_percent_left, health_percent_left)
 
 

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const DAMAGE_INTERVAL: float = 0.5
 
+@export var arena_time_manager: ArenaTimeManager
 @export var floating_text_scene: PackedScene
 
 @onready var health_component: HealthComponent = $HealthComponent
@@ -25,6 +26,7 @@ func _ready() -> void:
 	self.damage_interval_timer.timeout.connect(self._on_damage_interval_timer_timeout)
 	self.health_component.health_changed.connect(self._on_health_changed)
 	GameEvents.ability_upgrade_added.connect(self._on_ability_upgrade_added)
+	self.arena_time_manager.regenerate_ticks_increased.connect(self._on_regenerate_ticks_increased)
 
 	self._update_health_progress_bar(self.health_component.health_percent())
 	self.velocity_component.max_speed = self.base_speed
@@ -90,8 +92,14 @@ func _on_damage_interval_timer_timeout() -> void:
 	self._check_deal_damage()
 
 
-func _on_health_changed(health_percent_left: float) -> void:
+func _on_health_changed(_amount: float, health_percent_left: float) -> void:
 	self._update_health_progress_bar(health_percent_left)
+
+
+func _on_regenerate_ticks_increased(_regenerate_ticks: int) -> void:
+	var health_regeneration_quantity: int = MetaProgression.get_upgrade_count("health_regeneration")
+	if health_regeneration_quantity > 0:
+		self.health_component.heal(health_regeneration_quantity)
 
 
 func _on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary) -> void:
