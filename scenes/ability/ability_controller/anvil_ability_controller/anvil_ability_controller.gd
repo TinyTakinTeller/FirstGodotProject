@@ -5,7 +5,7 @@ const BASE_DAMAGE: float = 4
 
 @export var anvil_ability_scene: PackedScene
 
-var anvil_count: int = 0
+var anvil_count: int = 1
 
 
 func _ready() -> void:
@@ -26,9 +26,9 @@ func _on_timer_timeout() -> void:
 
 func _spawn_anvil_ability(player: Node2D) -> void:
 	var direction: Vector2 = Vector2.RIGHT.rotated(randf_range(0, TAU))
-	var rotation_degrees: float = 360.0 / (self.anvil_count + 1)
+	var rotation_degrees: float = 360.0 / self.anvil_count
 	var anvil_distance: float = randf_range(0, self.BASE_RANGE)
-	for i in range(self.anvil_count + 1):
+	for i in range(self.anvil_count):
 		var adjusted_direction: Vector2 = direction.rotated(deg_to_rad(i * rotation_degrees))
 		var spawn_position: Vector2 = player.global_position + (adjusted_direction * anvil_distance)
 
@@ -48,5 +48,5 @@ func _spawn_anvil_ability(player: Node2D) -> void:
 
 
 func _on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary) -> void:
-	if upgrade.id == "anvil_count":
-		self.anvil_count = current_upgrades["anvil_count"]["quantity"]
+	if upgrade.id == "anvil_amount":
+		self.anvil_count = 1 + current_upgrades["anvil_amount"]["quantity"]

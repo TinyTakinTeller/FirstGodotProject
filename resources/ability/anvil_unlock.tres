@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="AbilityUnlock" load_steps=3 format=3 uid="uid://bwcm6riroqxcp"]
+[gd_resource type="Resource" script_class="AbilityUnlock" load_steps=4 format=3 uid="uid://bwcm6riroqxcp"]
 
 [ext_resource type="PackedScene" uid="uid://dqwhwn660pfed" path="res://scenes/ability/ability_controller/anvil_ability_controller/anvil_ability_controller.tscn" id="1_40i8u"]
 [ext_resource type="Script" path="res://resources/ability/ability_unlock.gd" id="2_5swtw"]
+[ext_resource type="Resource" uid="uid://blvuojli1xq4d" path="res://resources/ability/anvil_amount.tres" id="3_bkr6j"]
 
 [resource]
 script = ExtResource("2_5swtw")
 ability_controller_scene = ExtResource("1_40i8u")
-unlocks = Array[Resource("res://resources/ability/ability_upgrade.gd")]([])
+unlocks = Array[Resource("res://resources/ability/ability_upgrade.gd")]([ExtResource("3_bkr6j")])
 id = "anvil_unlock"
 name = "Anvil Ability"
 description = "Spawns and drops an anvil around player."
