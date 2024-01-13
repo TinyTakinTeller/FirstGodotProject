@@ -5,6 +5,7 @@ const MIN_SPAWN_TIME: float = 0.3
 
 @export var basic_enemy_scene: PackedScene
 @export var wizard_enemy_scene: PackedScene
+@export var bat_enemy_scene: PackedScene
 @export var spawn_radius: float
 @export var arena_time_manager: ArenaTimeManager
 
@@ -45,3 +46,5 @@ func _on_arena_difficulty_increased(arena_difficulty: int) -> void:
 
 	if arena_difficulty == 1:
 		self.enemy_table.add_item(wizard_enemy_scene, 5)
+	if arena_difficulty == 2:
+		self.enemy_table.add_item(bat_enemy_scene, 5)

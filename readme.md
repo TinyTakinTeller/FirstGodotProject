@@ -831,7 +831,7 @@ Project > Export > Windows Desktop
 
 video 13. Fixing an Enemy Spawning Bug
 
-TIP: add offser when raycasting to account for entity hitbox size
+TIP: add offset when raycasting to account for entity hitbox size
 
 
 video 14. Conclusion
@@ -846,16 +846,18 @@ TODO: shader lag spike workaround: https://github.com/godotengine/godot/issues/8
 
 </details>
 
-Personal Notes for **Chapter 6** of the course are below. - **Pre-Release: more enemies, upgrades, balancing, ...**
+Personal Notes for **Chapter 6** of the course are below. - **Pre-Release: more content, balancing, ...**
 
 <details>
 
 ```
 
-video _
-
-TBA
-
+video 1. Adding Another Enemy Type
+video 2. Creating an Anvil Ability
+video 3. Adding a Health Regeneration Meta Upgrade
+video 4. Adding an Anvil Ability Upgrade
+video 5. Fixing UI Sizing and Increasing Enemy Count
+video 6. Adding Anvil Impact Particles
 
 ```
 
@@ -886,7 +888,7 @@ Godot Engine QOL improvements wishlist is below.
 ```
 - Member variable hightlight: https://github.com/godotengine/godot/pull/74393
 - Mandatory export flag: https://github.com/godotengine/godot/pull/68420
-- Shader Lag Spike Workaround: https://github.com/godotengine/godot/issues/86913#issuecomment-1882189914
+- Lag Spike workaround: https://github.com/godotengine/godot/issues/86913#issuecomment-1882189914
 ```
 
 </details>

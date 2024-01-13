@@ -41,7 +41,7 @@ static func _get_instance_bounded(
 	var random_direction: Vector2 = Vector2.RIGHT.rotated(randf_range(0, TAU))
 	for i in 4:
 		spawn_position = target.global_position + (distance * random_direction)
-		var enemy_offset_vector: Vector2 = 20 * random_direction
+		var enemy_offset_vector: Vector2 = enemy_offset * random_direction
 
 		var query_params: PhysicsRayQueryParameters2D = PhysicsRayQueryParameters2D.create(
 			target.global_position, spawn_position + enemy_offset_vector, 1 << mask_bit
