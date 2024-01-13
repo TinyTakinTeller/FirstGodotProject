@@ -868,8 +868,14 @@ TODO: refactor meta menu to preload meta upgrades ? (Like ability upgrades...)
 
 
 video 4. Adding an Anvil Ability Upgrade
+
+TODO: add more content ?
+
+
 video 5. Fixing UI Sizing and Increasing Enemy Count
-video 6. Adding Anvil Impact Particles
+
+TODO: balance the game ?
+
 
 ```
 

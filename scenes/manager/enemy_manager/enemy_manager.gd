@@ -12,6 +12,7 @@ const MIN_SPAWN_TIME: float = 0.3
 @onready var timer: Timer = $Timer
 
 var enemy_table: WeightedTable = WeightedTable.new()
+var spawn_amount: int = 1
 
 
 func _ready() -> void:
@@ -37,7 +38,11 @@ func _spawn_enemy_instance(target: Node2D) -> void:
 		return
 
 	var entities_layer: Node2D = self.get_tree().get_first_node_in_group("entities_layer") as Node2D
-	SpawnerUtility.spawn_instance_bounded(enemy_scene, target, self.spawn_radius, entities_layer, 0)
+
+	for i in self.spawn_amount:
+		SpawnerUtility.spawn_instance_bounded(
+			enemy_scene, target, self.spawn_radius, entities_layer, 0
+		)
 
 
 func _on_arena_difficulty_increased(arena_difficulty: int) -> void:
@@ -48,3 +53,6 @@ func _on_arena_difficulty_increased(arena_difficulty: int) -> void:
 		self.enemy_table.add_item(wizard_enemy_scene, 5)
 	if arena_difficulty == 2:
 		self.enemy_table.add_item(bat_enemy_scene, 5)
+
+	if arena_difficulty % 6 == 0:
+		self.spawn_amount += 1
