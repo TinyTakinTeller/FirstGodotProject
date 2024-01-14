@@ -1,3 +1,5 @@
+## Methods to move and accelerate the owner node towards a given target or in a given direction.
+
 extends Node
 class_name VelocityComponent
 
@@ -28,6 +30,15 @@ func accelerate_in_direction(direction: Vector2) -> void:
 	)
 
 
+func move_and_decelerate() -> void:
+	self.decelerate()
+	self.move()
+
+
+func decelerate() -> void:
+	self.accelerate_in_direction(Vector2.ZERO)
+
+
 func move() -> void:
 	var owner_body: CharacterBody2D = self.owner as CharacterBody2D
 	if owner_body == null:
@@ -36,7 +47,3 @@ func move() -> void:
 	owner_body.velocity = velocity
 	owner_body.move_and_slide()
 	self.velocity = owner_body.velocity
-
-
-func decelerate() -> void:
-	accelerate_in_direction(Vector2.ZERO)

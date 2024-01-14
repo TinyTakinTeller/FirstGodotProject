@@ -41,7 +41,7 @@ func _update_progress() -> void:
 	if is_maxed:
 		self.purchase_button.text = "Max"
 	self.progress_label.text = str(currency) + "/" + str(self.upgrade.experience_cost)
-	self.count_label.text = "x%d" % current_quantity
+	self.count_label.text = "%d / %d" % [current_quantity, self.upgrade.max_quantity]
 
 
 func _on_purchase_pressed() -> void:

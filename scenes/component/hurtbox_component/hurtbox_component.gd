@@ -1,3 +1,6 @@
+## Detects 'area_entered' signal for "Enemy" mask.
+## If detected 'hitbox_component', damages 'health_component' and spawns 'floating_text_scene'.
+
 extends Area2D
 class_name HurtboxComponent
 

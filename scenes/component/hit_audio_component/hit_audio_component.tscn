@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi8tcesfs6ype"]
+
+[ext_resource type="Script" path="res://scenes/component/hit_audio_component/hit_audio_component.gd" id="1_08tc6"]
+
+[node name="HitAudioComponent" type="Node"]
+script = ExtResource("1_08tc6")

@@ -1,10 +1,12 @@
+## Connects to 'died' signal of 'health_component' and drops an instance of 'vial_scene'.
+## The drop chance 'base_drop_percent' is modified via the meta upgrade 'experience_gain'.
+
 extends Node
 
 @export var vial_scene: PackedScene
 @export var health_component: HealthComponent
 @export var spawn_radius: float = 1
-
-var base_drop_percent: float = 0.5
+@export var base_drop_percent: float = 0.5
 
 
 func _ready() -> void:

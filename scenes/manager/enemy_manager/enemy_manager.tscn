@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://dt5dthdadn0kj"]
 
 [ext_resource type="Script" path="res://scenes/manager/enemy_manager/enemy_manager.gd" id="1_w16j7"]
-[ext_resource type="PackedScene" uid="uid://5nvw1i856kr3" path="res://scenes/enviroment/enemy/basic_enemy/basic_enemy.tscn" id="2_l7yte"]
-[ext_resource type="PackedScene" uid="uid://2jscugecl6nk" path="res://scenes/enviroment/enemy/wizard_enemy/wizard_enemy.tscn" id="3_ei8eb"]
-[ext_resource type="PackedScene" uid="uid://7q44jy1do8g3" path="res://scenes/enviroment/enemy/bat_enemy/bat_enemy.tscn" id="4_86paa"]
+[ext_resource type="PackedScene" uid="uid://5nvw1i856kr3" path="res://scenes/game/enemy/rat_enemy/rat_enemy.tscn" id="2_l7yte"]
+[ext_resource type="PackedScene" uid="uid://2jscugecl6nk" path="res://scenes/game/enemy/wizard_enemy/wizard_enemy.tscn" id="3_ei8eb"]
+[ext_resource type="PackedScene" uid="uid://7q44jy1do8g3" path="res://scenes/game/enemy/bat_enemy/bat_enemy.tscn" id="4_86paa"]
 
 [node name="EnemyManager" type="Node"]
 script = ExtResource("1_w16j7")
-basic_enemy_scene = ExtResource("2_l7yte")
+rat_enemy_scene = ExtResource("2_l7yte")
 wizard_enemy_scene = ExtResource("3_ei8eb")
 bat_enemy_scene = ExtResource("4_86paa")
 spawn_radius = 375.0

@@ -1,21 +1,20 @@
+## Connects to 'hurt' signal of 'hurt_box_component' and flashes 'sprite' with 'hit_flash_material'.
+
 extends Node
 
-@export var health_component: HealthComponent
 @export var sprite: Sprite2D
+@export var hurt_box_component: HurtboxComponent
 @export var hit_flash_material: ShaderMaterial
 
 var hit_flash_tween: Tween
 
 
 func _ready() -> void:
-	self.health_component.health_changed.connect(self._on_health_changed)
 	self.sprite.material = self.hit_flash_material
+	self.hurt_box_component.hurt.connect(self._on_hurt)
 
 
-func _on_health_changed(amount: float, _health_percent: float) -> void:
-	if amount >= 0:
-		return
-
+func _on_hurt() -> void:
 	if self.hit_flash_tween != null && self.hit_flash_tween.is_valid():
 		self.hit_flash_tween.kill()
 

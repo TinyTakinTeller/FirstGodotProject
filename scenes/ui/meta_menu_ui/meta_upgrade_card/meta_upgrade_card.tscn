@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://7bfum25cft7c"]
 
 [ext_resource type="Script" path="res://scenes/ui/meta_menu_ui/meta_upgrade_card/meta_upgrade_card.gd" id="1_tjxho"]
-[ext_resource type="PackedScene" uid="uid://b4a2wdfsuy8bw" path="res://scenes/component/random_audio_stream_player_compoment/random_audio_stream_player_component.tscn" id="2_npgvm"]
+[ext_resource type="PackedScene" uid="uid://b4a2wdfsuy8bw" path="res://scenes/ui/ui_component/random_audio_stream_player_component/random_audio_stream_player_component.tscn" id="2_npgvm"]
 [ext_resource type="AudioStream" uid="uid://drtwoqh3p3b82" path="res://assets/audio/sfx/switch_ui/switch1.ogg" id="3_acgt3"]
 [ext_resource type="AudioStream" uid="uid://cwfc806fwai5c" path="res://assets/audio/sfx/switch_ui/switch2.ogg" id="4_yiwrn"]
 [ext_resource type="AudioStream" uid="uid://bjhn4hotsutta" path="res://assets/audio/sfx/switch_ui/switch3.ogg" id="5_hdwxm"]
@@ -12,7 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bjkramv6t03c0" path="res://assets/audio/sfx/switch_ui/switch8.ogg" id="10_rw464"]
 [ext_resource type="AudioStream" uid="uid://kumb80t8gmf1" path="res://assets/audio/sfx/switch_ui/switch9.ogg" id="11_hdbwa"]
 [ext_resource type="AudioStream" uid="uid://d0jdyuii21w3s" path="res://assets/audio/sfx/switch_ui/switch10.ogg" id="12_nk8v1"]
-[ext_resource type="Texture2D" uid="uid://borhelnimn1jr" path="res://assets/image/enviroment/pickup/tile_0126.png" id="13_0n718"]
+[ext_resource type="Texture2D" uid="uid://borhelnimn1jr" path="res://assets/image/game/pickup/tile_0126.png" id="13_0n718"]
 [ext_resource type="PackedScene" uid="uid://cb4vhph63bk1" path="res://scenes/ui/ui_component/sound_button/sound_button.tscn" id="14_mbldq"]
 
 [sub_resource type="Animation" id="Animation_8kjts"]

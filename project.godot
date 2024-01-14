@@ -20,7 +20,7 @@ boot_splash/image="res://assets/image/icon/icon.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://assets/image/icon/icon.png"
-config/windows_native_icon="res://assets/icon/icon.ico"
+config/windows_native_icon="res://assets/image/icon/icon.ico"
 
 [audio]
 

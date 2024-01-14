@@ -887,14 +887,20 @@ Personal Notes for **Personal Extensions** are TBA.
 
 ```
 
-Extensions I.
+Extensions I. (01/14/2024)
 
-refactor file structure: move files to assets
-
-TIP: export configuration paths will NOT be updated, need to re-set manually (e.g. windows native icon)
+- refactor file structure a bit 
+* TIP: export configuration paths will NOT be updated, need to re-set manually (e.g. windows native icon): "config/windows_native_icon" in project.godot
+- refactor enemy components a bit
+- in meta upgrade ui, show max quantity
 
 
 Extension II.
+
+COMMING SOON
+
+
+Extension III.
 
 COMMING SOON
 

@@ -3,7 +3,7 @@ extends Node
 const BASE_SPAWN_TIME: float = 1
 const MIN_SPAWN_TIME: float = 0.3
 
-@export var basic_enemy_scene: PackedScene
+@export var rat_enemy_scene: PackedScene
 @export var wizard_enemy_scene: PackedScene
 @export var bat_enemy_scene: PackedScene
 @export var spawn_radius: float
@@ -16,7 +16,7 @@ var spawn_amount: int = 1
 
 
 func _ready() -> void:
-	self.enemy_table.add_item(basic_enemy_scene, 10)
+	self.enemy_table.add_item(rat_enemy_scene, 10)
 
 	self.timer.timeout.connect(self._on_timer_timeout)
 	self.arena_time_manager.arena_difficulty_increased.connect(self._on_arena_difficulty_increased)
@@ -49,9 +49,9 @@ func _on_arena_difficulty_increased(arena_difficulty: int) -> void:
 	var time_reduction: float = (.1 / 12) * arena_difficulty
 	self.timer.wait_time = max(self.BASE_SPAWN_TIME - time_reduction, self.MIN_SPAWN_TIME)
 
-	if arena_difficulty == 1:
+	if arena_difficulty == 6:
 		self.enemy_table.add_item(wizard_enemy_scene, 5)
-	if arena_difficulty == 2:
+	if arena_difficulty == 12:
 		self.enemy_table.add_item(bat_enemy_scene, 5)
 
 	if arena_difficulty % 6 == 0:
