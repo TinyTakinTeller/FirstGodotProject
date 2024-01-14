@@ -2,20 +2,40 @@
 
 First project to learn the Godot 4 Engine.
 
+Phases of development:
+- complete: https://www.udemy.com/course/create-a-complete-2d-arena-survival-roguelike-game-in-godot-4/
+- add custom tweaks, updates and extensions (in progress ...)
+
 List of features:
+- UI: main menu with options, screen transitions, upgrade selection, pause menu
+- difficulty increase over time: enemy species (3 unique), enemy spawn rate, enemy density
+- ability upgrades: unlockable weapons (3 unique), damage upgrades, speed upgrades, quantity upgrades
+- save file: meta upgrades
+- effects: sounds, particles, shaders, animations
 
-*Comming Soon*
+Controls:
+- mouse to navigate UI
+- arrow keys or WASD to move
+- P button to pause the game
 
+TODO:
+- make the game fun: do balancing, more content, score system, skill mechanics, ...
+- make the game replayable: stats tracking, achievements, secret unlocks, game modes, ...
+- extend QOL features: multi-threaded loading, save file system, shortcut keys, localization, ...
+- make the game marketable: add unique graphics and audio, add story, make trailer, ...
+- prepare for launch: make steam page, make press kit, make social platform activity, ...
+
+NOTE: Not sure If I will finish this or rather start a new original project.
+
+Similar projects:
+- https://github.com/NachoKai/arena-survivors
+- https://github.com/imitatehappiness/GDLastOfTheSurvivors
 
 
 ## Releases
 
-*Comming Soon*
-
-Chapter 2 screenshot:
-
-![image](https://github.com/TinyTakinTeller/FirstGodotProject/assets/155020210/4d3e6cce-b525-4001-8508-13cf4a8f916c)
-
+Alpha 0.0.1 : *Comming Soon*
+- base project after completing the course, with minor personal tweaks
 
 
 ## Development Log
@@ -881,7 +901,7 @@ TODO: balance the game ?
 
 </details>
 
-Personal Notes for **Personal Extensions** are TBA.
+Personal Notes for **Post-Course-Extensions** are below.
 
 <details>
 
@@ -890,20 +910,18 @@ Personal Notes for **Personal Extensions** are TBA.
 Extensions I. (01/14/2024)
 
 - refactor file structure a bit 
-* TIP: export configuration paths will NOT be updated, need to re-set manually (e.g. windows native icon): "config/windows_native_icon" in project.godot
 - refactor enemy components a bit
 - in meta upgrade ui, show max quantity
+- TODO: add documentation
+- TODO: refactor signals to use binding instead of connect in ready method
+- TODO: add license
+- TODO: localization https://docs.godotengine.org/en/stable/tutorials/i18n/internationalizing_games.html
+- TODO: background loading https://docs.godotengine.org/en/stable/tutorials/io/background_loading.html
 
 
 Extension II.
 
 COMMING SOON
-
-
-Extension III.
-
-COMMING SOON
-
 
 
 ```
@@ -916,12 +934,22 @@ Godot Engine QOL improvements wishlist is below.
 <details>
 
 ```
+
 - Member variable hightlight: https://github.com/godotengine/godot/pull/74393
 - Mandatory export flag: https://github.com/godotengine/godot/pull/68420
 - Lag Spike workaround: https://github.com/godotengine/godot/issues/86913#issuecomment-1882189914
+- Support for large amount of entities: https://github.com/godotengine/godot-proposals/issues/2380
+
 ```
 
 </details>
+
+
+TODO: Explore Godot resources ... (plugins, addons, extensions, templates, boilerplates, ...)
+- threaded loading main menu: https://www.reddit.com/r/godot/comments/17vgp05/godot_4_project_template/
+- crystal-bit template: https://github.com/crystal-bit/godot-game-template
+- curated list of addons: https://github.com/godotengine/awesome-godot
+- curated list of plugins: https://github.com/nonunknown/godot-powerful
 
 
 
