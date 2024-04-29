@@ -2,9 +2,12 @@
 
 First project to learn the Godot 4 Engine.
 
+STATUS: Currently not planning on building a full game on top of this completed course.
+
 Phases of development:
-- complete: https://www.udemy.com/course/create-a-complete-2d-arena-survival-roguelike-game-in-godot-4/
-- add custom tweaks, updates and extensions (in progress ...)
+- 1. COMPLETED: https://www.udemy.com/course/create-a-complete-2d-arena-survival-roguelike-game-in-godot-4/
+- 2. TODO: add custom tweaks, updates and extensions
+- 3. TODO: publish the full game
 
 List of features:
 - UI: main menu with options, screen transitions, upgrade selection, pause menu
@@ -24,8 +27,6 @@ TODO:
 - extend QOL features: multi-threaded loading, save file system, shortcut keys, localization, ...
 - make the game marketable: add unique graphics and audio, add story, make trailer, ...
 - prepare for launch: make steam page, make press kit, make social platform activity, ...
-
-NOTE: Not sure If I will finish this or rather start a new original project.
 
 Similar projects:
 - https://github.com/NachoKai/arena-survivors
